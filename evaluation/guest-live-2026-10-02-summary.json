@@ -1,0 +1,46 @@
+{
+  "scope": "Development sample observed in guest browser. Not independent accuracy or scientific approval. No human decisions yet.",
+  "source_report_sha256": "565d1e1dda6fbbc95fac30b663f45196b9a0ee8845fbfdce523beb3190158e2a",
+  "exported_at": "2026-10-02T00:54:46.100Z",
+  "engine": "gpt-4.1-2025-04-14 / claims-v10-scoped-fields",
+  "elapsed_ms": 3660,
+  "documents": 5,
+  "decisions_recorded": 0,
+  "replay_validation": {
+    "matched_saved_findings": 5,
+    "exact_source_quotes": 5,
+    "method": "Reconstructed both groundClaimChecks passes and reconcileChecks from recorded claim fields; compared verdict, quote, reason and disagreement IDs to export. No model invocation."
+  },
+  "cases": [
+    {
+      "title": "مواعيد اللقاءات",
+      "verdict": "unaffected",
+      "status": "pending",
+      "disagreement": false
+    },
+    {
+      "title": "مسودة تحتاج إلى استكمال",
+      "verdict": "unaffected",
+      "status": "pending",
+      "disagreement": false
+    },
+    {
+      "title": "نص دعوة للمتطوعين",
+      "verdict": "uncertain",
+      "status": "pending",
+      "disagreement": true
+    },
+    {
+      "title": "ملخص موثّق",
+      "verdict": "unaffected",
+      "status": "pending",
+      "disagreement": false
+    },
+    {
+      "title": "منشور تعلّم القرآن",
+      "verdict": "affected",
+      "status": "pending",
+      "disagreement": false
+    }
+  ]
+}
