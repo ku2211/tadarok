@@ -26,6 +26,6 @@ export async function startGuest(request:Request){
 }
 export async function reserveGuestAnalysis(c:Context){
  const at=now(),since=new Date(Date.now()-86400000).toISOString();
- const result=await c.db.prepare('INSERT INTO guest_analysis_budget(id,space_id,created_at) SELECT ?,?,? WHERE (SELECT COUNT(*) FROM guest_analysis_budget WHERE space_id=?)<5 AND (SELECT COUNT(*) FROM guest_analysis_budget WHERE created_at>?)<100').bind(uid(),c.space!.id,at,c.space!.id,since).run();
+ const result=await c.db.prepare('INSERT INTO guest_analysis_budget(id,space_id,created_at) SELECT ?,?,? WHERE (SELECT COUNT(*) FROM guest_analysis_budget WHERE space_id=?)<20 AND (SELECT COUNT(*) FROM guest_analysis_budget WHERE created_at>?)<100').bind(uid(),c.space!.id,at,c.space!.id,since).run();
  if(!result.meta.changes)throw new UserError('بلغت التجربة حد الفحص للجلسة أو السعة اليومية. يمكنك متابعة المراجعة والتصدير أو تسجيل الدخول لمساحة خاصة.',429);
 }

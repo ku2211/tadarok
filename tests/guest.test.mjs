@@ -22,6 +22,23 @@ x=await req(a);assert.equal(x.findings[0].status,'approved');f=x.findings[0];let
 x=await req(a,'edit_document',{id:doc.id,version:doc.version,title:doc.title,body:doc.body+' نص اصطناعي إضافي.',findingId:f.id,note:'اختبار تعديل النسخة',confirmSynthetic:true,...snap(f)});assert.equal(x.findings[0].status,'corrected');assert.equal(x.findings[0].document_version,2);
 f=x.findings[1];x=await req(a,'review',{id:f.id,decision:'refer',note:'اختبار إحالة للمختص',...snap(f)});assert.equal(x.findings[1].status,'referred');
 assert.equal((await req(b)).findings.length,0);const exported=exportForReview(x);assert.equal(exported.corrections[0].reference,x.corrections[0].reference);assert.ok(exported.events.some(e=>e.action==='review_refer'));assert.ok(!JSON.stringify(exported).includes(a.split('=')[1]));
-for(let i=0;i<4;i++)await req(a,'analyze',{id:x.corrections[0].id});await req(a,'analyze',{id:x.corrections[0].id},429);
+for(let i=0;i<19;i++)await req(a,'analyze',{id:x.corrections[0].id});
+assert.equal(sql.prepare('SELECT COUNT(*) n FROM guest_analysis_budget WHERE space_id=?').get(x.space.id).n,20);
+await req(a,'analyze',{id:x.corrections[0].id},429);
+assert.equal(sql.prepare('SELECT COUNT(*) n FROM guest_analysis_budget WHERE space_id=?').get(x.space.id).n,20);
+x=await req(a);f=x.findings[0];
+x=await req(a,'review',{id:f.id,decision:'refer',note:'المراجعة متاحة بعد بلوغ حد التحليل',...snap(f)});
+assert.equal(x.findings[0].status,'referred');assert.ok(exportForReview(await req(a)).events.some(e=>JSON.parse(e.details).note==='المراجعة متاحة بعد بلوغ حد التحليل'));
+// Fill the remaining shared budget with four other synthetic sessions.
+const fillSpaces=[];
+for(let s=0;s<4;s++){
+ const extra=await req(await session());fillSpaces.push(extra.space.id);
+ for(let i=0;i<20;i++)sql.prepare('INSERT INTO guest_analysis_budget(id,space_id,created_at) VALUES(?,?,?)').run(`shared-budget-${s}-${i}`,extra.space.id,new Date().toISOString());
+}
+await req(b,'analyze',{id:y.corrections[0].id},429);
+assert.equal(sql.prepare('SELECT COUNT(*) n FROM guest_analysis_budget WHERE space_id=?').get(y.space.id).n,0);
+assert.equal((await req(b)).documents.length,5);
+for(const space of fillSpaces)sql.prepare('UPDATE guest_analysis_budget SET created_at=? WHERE space_id=?').run('2000-01-01T00:00:00.000Z',space);
+await req(b,'analyze',{id:y.corrections[0].id});
 sql.prepare('UPDATE guest_sessions SET expires_at=? WHERE space_id=?').run('2000-01-01',x.space.id);await req(a,null,{},401);
 console.log('PASS guest API + SQLite: isolated anonymous sessions, cookie security, private-route denial, cross-space denial, CSRF, live analysis handler (mock provider), review/edit/referral/export, persistence, quota and expiration.');
