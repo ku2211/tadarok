@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1790623658328,
+      "tag": "0000_long_invaders",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1790806908939,
+      "tag": "0001_motionless_lady_bullseye",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1790899126533,
+      "tag": "0002_old_black_queen",
+      "breakpoints": true
+    }
+  ]
+}

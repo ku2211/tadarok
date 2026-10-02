@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {validateAssessments,assertVersion,canApprove,safeUrl} from '../lib/tadarok/domain.ts';
+import {exportForReview} from '../lib/tadarok/export.ts';
+const docs=[{id:'a',body:'هذا نص قديم يحتاج إلى مراجعة.'},{id:'b',body:'إعلان مواعيد الزيارة.'}];
+const valid=[{document_id:'a',verdict:'affected',quote:'نص قديم',reason:'يحمل المعنى القديم.'},{document_id:'b',verdict:'unaffected',quote:'',reason:'لا توجد صلة.'}];
+test('accepts grounded assessments for all uploaded documents',()=>assert.equal(validateAssessments({assessments:valid},docs).length,2));
+test('rejects invented or altered evidence',()=>assert.throws(()=>validateAssessments({assessments:[{...valid[0],quote:'نص جديد'},valid[1]]},docs),{status:502}));
+test('rejects omitted, duplicated and unknown document IDs',()=>{for(const assessments of [[valid[0]],[valid[0],valid[0]],[valid[0],{...valid[1],document_id:'other'}]])assert.throws(()=>validateAssessments({assessments},docs),{status:502});});
+test('uncertain needs evidence and is not an approval',()=>assert.throws(()=>validateAssessments({assessments:[{...valid[0],verdict:'uncertain',quote:''},valid[1]]},docs),{status:502}));
+test('stale document revisions cannot be accepted',()=>assert.throws(()=>assertVersion(1,2),{status:409}));
+test('only authorized review roles can approve',()=>{assert.equal(canApprove('editor'),false);assert.equal(canApprove('owner'),true);assert.equal(canApprove('reviewer'),true);});
+test('source URLs reject executable protocols',()=>{assert.throws(()=>safeUrl('javascript:alert(1)'));assert.equal(safeUrl('https://example.org/reference'),'https://example.org/reference');});
+test('exports remove structured account identity and member changes',()=>{const s={space:{id:'s'},actor:{id:'real',name:'Private Reviewer',email:'private@example.org',role:'owner'},documents:[],corrections:[],findings:[{reviewed_by:'Private Reviewer'}],events:[{actor_id:'real',actor_name:'Private Reviewer',action:'review_approve'},{actor_id:'real',actor_name:'Private Reviewer',action:'member_added',details:'private@example.org'}],runs:[{actor:'Private Reviewer'}],members:[{email:'private@example.org'}],aiReady:false};const out=JSON.stringify(exportForReview(s));assert.equal(out.includes('private@example.org'),false);assert.equal(out.includes('Private Reviewer'),false);});

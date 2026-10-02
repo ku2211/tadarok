@@ -1,0 +1,385 @@
+{
+  "scope": "Direct dependencies only. Keep transitive package license files from the package distribution.",
+  "dependencies": [
+    {
+      "name": "@base-ui/react",
+      "version": "1.7.0",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mui/base-ui.git",
+        "directory": "packages/react"
+      }
+    },
+    {
+      "name": "@hookform/resolvers",
+      "version": "5.7.1",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/react-hook-form/resolvers.git"
+      }
+    },
+    {
+      "name": "@shadcn/react",
+      "version": "0.3.0",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/shadcn-ui/ui.git",
+        "directory": "packages/react"
+      }
+    },
+    {
+      "name": "class-variance-authority",
+      "version": "0.7.1",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/joe-bell/cva.git"
+    },
+    {
+      "name": "clsx",
+      "version": "2.1.1",
+      "license": "MIT",
+      "repository": "lukeed/clsx"
+    },
+    {
+      "name": "cmdk",
+      "version": "1.1.1",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pacocoursey/cmdk.git",
+        "directory": "cmdk"
+      }
+    },
+    {
+      "name": "date-fns",
+      "version": "4.4.0",
+      "license": "MIT",
+      "repository": "https://github.com/date-fns/date-fns"
+    },
+    {
+      "name": "drizzle-orm",
+      "version": "0.45.2",
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/drizzle-team/drizzle-orm.git"
+      }
+    },
+    {
+      "name": "embla-carousel-react",
+      "version": "8.6.0",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/davidjerleke/embla-carousel"
+      }
+    },
+    {
+      "name": "input-otp",
+      "version": "1.4.2",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/guilhermerodz/input-otp.git",
+        "directory": "packages/input-otp"
+      }
+    },
+    {
+      "name": "lucide-react",
+      "version": "1.31.0",
+      "license": "ISC",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/lucide-icons/lucide.git",
+        "directory": "packages/lucide-react"
+      }
+    },
+    {
+      "name": "next",
+      "version": "16.3.4",
+      "license": "MIT",
+      "repository": "vercel/next.js"
+    },
+    {
+      "name": "next-themes",
+      "version": "0.4.6",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/pacocoursey/next-themes.git"
+      }
+    },
+    {
+      "name": "radix-ui",
+      "version": "1.6.7",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/radix-ui"
+      }
+    },
+    {
+      "name": "react",
+      "version": "19.2.6",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/facebook/react.git",
+        "directory": "packages/react"
+      }
+    },
+    {
+      "name": "react-day-picker",
+      "version": "10.0.1",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gpbl/react-day-picker.git",
+        "directory": "packages/react-day-picker"
+      }
+    },
+    {
+      "name": "react-dom",
+      "version": "19.2.6",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/facebook/react.git",
+        "directory": "packages/react-dom"
+      }
+    },
+    {
+      "name": "react-hook-form",
+      "version": "7.85.0",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/react-hook-form/react-hook-form"
+      }
+    },
+    {
+      "name": "react-resizable-panels",
+      "version": "4.12.2",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/bvaughn/react-resizable-panels.git"
+      }
+    },
+    {
+      "name": "recharts",
+      "version": "3.8.0",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/recharts/recharts.git"
+      }
+    },
+    {
+      "name": "sonner",
+      "version": "2.0.8",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/emilkowalski/sonner.git"
+      }
+    },
+    {
+      "name": "tailwind-merge",
+      "version": "3.6.0",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dcastil/tailwind-merge.git"
+      }
+    },
+    {
+      "name": "vaul",
+      "version": "1.1.2",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/emilkowalski/vaul.git"
+      }
+    },
+    {
+      "name": "zod",
+      "version": "3.25.76",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/colinhacks/zod.git"
+      }
+    },
+    {
+      "name": "@cloudflare/vite-plugin",
+      "version": "1.37.1",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/cloudflare/workers-sdk.git",
+        "directory": "packages/vite-plugin-cloudflare"
+      }
+    },
+    {
+      "name": "@cloudflare/workers-types",
+      "version": "4.20260515.1",
+      "license": "MIT OR Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/cloudflare/workerd"
+      }
+    },
+    {
+      "name": "@tailwindcss/postcss",
+      "version": "4.2.1",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/tailwindlabs/tailwindcss.git",
+        "directory": "packages/@tailwindcss-postcss"
+      }
+    },
+    {
+      "name": "@types/node",
+      "version": "22.19.19",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/node"
+      }
+    },
+    {
+      "name": "@types/react",
+      "version": "19.2.14",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react"
+      }
+    },
+    {
+      "name": "@types/react-dom",
+      "version": "19.2.3",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react-dom"
+      }
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "version": "6.0.2",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vitejs/vite-plugin-react.git",
+        "directory": "packages/plugin-react"
+      }
+    },
+    {
+      "name": "@vitejs/plugin-rsc",
+      "version": "0.5.26",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vitejs/vite-plugin-react.git",
+        "directory": "packages/plugin-rsc"
+      }
+    },
+    {
+      "name": "drizzle-kit",
+      "version": "0.31.10",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/drizzle-team/drizzle-orm.git"
+      }
+    },
+    {
+      "name": "eslint",
+      "version": "9.39.4",
+      "license": "MIT",
+      "repository": "eslint/eslint"
+    },
+    {
+      "name": "eslint-config-next",
+      "version": "16.3.4",
+      "license": "MIT",
+      "repository": {
+        "url": "vercel/next.js",
+        "directory": "packages/eslint-config-next"
+      }
+    },
+    {
+      "name": "react-server-dom-webpack",
+      "version": "19.2.6",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/facebook/react.git",
+        "directory": "packages/react-server-dom-webpack"
+      }
+    },
+    {
+      "name": "tailwindcss",
+      "version": "4.2.1",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/tailwindlabs/tailwindcss.git",
+        "directory": "packages/tailwindcss"
+      }
+    },
+    {
+      "name": "tw-animate-css",
+      "version": "1.4.0",
+      "license": "MIT",
+      "repository": "Wombosvideo/tw-animate-css"
+    },
+    {
+      "name": "typescript",
+      "version": "5.9.3",
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/microsoft/TypeScript.git"
+      }
+    },
+    {
+      "name": "vinext",
+      "version": "1.0.0-beta.5",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cloudflare/vinext.git"
+      }
+    },
+    {
+      "name": "vite",
+      "version": "8.0.13",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vitejs/vite.git",
+        "directory": "packages/vite"
+      }
+    },
+    {
+      "name": "wrangler",
+      "version": "4.92.0",
+      "license": "MIT OR Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/cloudflare/workers-sdk.git",
+        "directory": "packages/wrangler"
+      }
+    }
+  ]
+}

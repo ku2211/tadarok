@@ -1,0 +1,184 @@
+{
+  "notice": "Repeated builder-authored development cases. Not independent accuracy or proof of absence of errors. Human decisions not included in automated scores.",
+  "deployment": "appgdep_6abdb53cc61c819195262fca86e0b32a",
+  "source_commit": "cb78aa326a161bdf719b1d3affba46ca439317d9",
+  "runs": [
+    {
+      "sample": "A10",
+      "run": {
+        "id": "0a377e2e-12fd-4a10-9bd8-8034cd2ac144",
+        "space_id": "29e023d5-f6d8-438d-b730-f753c7bdaca3",
+        "correction_id": "0e5c0dcc-ca2c-4f33-9133-6e7dabe7a22f",
+        "engine": "gpt-4.1-2025-04-14 / claims-v10-scoped-fields",
+        "status": "completed",
+        "actor": "مراجع",
+        "doc_count": 10,
+        "elapsed_ms": 4572,
+        "created_at": "2026-10-01T01:21:10.301Z"
+      },
+      "usage": {
+        "input_tokens": 20770,
+        "output_tokens": 998
+      },
+      "export": "Tadarok-v15-A10-Live-Report.json",
+      "export_sha256": "f62147e0a829862b8abc83ed58f6be0d728f37da31865d7ea6685151d97d5435",
+      "count": 10,
+      "matched_original": 10,
+      "all_document_hashes_match": true,
+      "all_quotes_verbatim": true,
+      "human_decisions_before_measurement": 0,
+      "results": [
+        {
+          "case": "A01",
+          "actual": "unaffected",
+          "original_expected": "unaffected"
+        },
+        {
+          "case": "A02",
+          "actual": "affected",
+          "original_expected": "affected"
+        },
+        {
+          "case": "A03",
+          "actual": "unaffected",
+          "original_expected": "unaffected"
+        },
+        {
+          "case": "A04",
+          "actual": "affected",
+          "original_expected": "affected"
+        },
+        {
+          "case": "A05",
+          "actual": "unaffected",
+          "original_expected": "unaffected"
+        },
+        {
+          "case": "A06",
+          "actual": "affected",
+          "original_expected": "affected"
+        },
+        {
+          "case": "A07",
+          "actual": "unaffected",
+          "original_expected": "unaffected"
+        },
+        {
+          "case": "A08",
+          "actual": "affected",
+          "original_expected": "affected"
+        },
+        {
+          "case": "A09",
+          "actual": "affected",
+          "original_expected": "affected"
+        },
+        {
+          "case": "A10",
+          "actual": "unaffected",
+          "original_expected": "unaffected"
+        }
+      ]
+    },
+    {
+      "sample": "B12",
+      "run": {
+        "id": "fc9ee972-0911-404d-abc3-fbc06e3437d1",
+        "space_id": "311c00fc-1606-499c-bd62-109b6f35d6bd",
+        "correction_id": "b0012f86-c5ee-4a45-82dc-5bdb1821f4f3",
+        "engine": "gpt-4.1-2025-04-14 / claims-v10-scoped-fields",
+        "status": "completed",
+        "actor": "مراجع",
+        "doc_count": 12,
+        "elapsed_ms": 5460,
+        "created_at": "2026-10-01T01:21:46.674Z"
+      },
+      "usage": {
+        "input_tokens": 23818,
+        "output_tokens": 1183
+      },
+      "export": "Tadarok-v15-B12-Live-Report.json",
+      "export_sha256": "a5b5ba03575dd1db6b1d6e4653f0895c3a0c5474eb78ea56fb09a317f70d0b8c",
+      "count": 12,
+      "matched_original": 11,
+      "all_document_hashes_match": true,
+      "all_quotes_verbatim": true,
+      "human_decisions_before_measurement": 0,
+      "results": [
+        {
+          "case": "B01",
+          "actual": "affected",
+          "original_expected": "affected",
+          "revised_expected": "affected"
+        },
+        {
+          "case": "B02",
+          "actual": "unaffected",
+          "original_expected": "unaffected",
+          "revised_expected": "unaffected"
+        },
+        {
+          "case": "B03",
+          "actual": "uncertain",
+          "original_expected": "uncertain",
+          "revised_expected": "uncertain"
+        },
+        {
+          "case": "B04",
+          "actual": "uncertain",
+          "original_expected": "affected",
+          "revised_expected": "uncertain"
+        },
+        {
+          "case": "B05",
+          "actual": "unaffected",
+          "original_expected": "unaffected",
+          "revised_expected": "unaffected"
+        },
+        {
+          "case": "B06",
+          "actual": "uncertain",
+          "original_expected": "uncertain",
+          "revised_expected": "uncertain"
+        },
+        {
+          "case": "B07",
+          "actual": "affected",
+          "original_expected": "affected",
+          "revised_expected": "affected"
+        },
+        {
+          "case": "B08",
+          "actual": "unaffected",
+          "original_expected": "unaffected",
+          "revised_expected": "unaffected"
+        },
+        {
+          "case": "B09",
+          "actual": "affected",
+          "original_expected": "affected",
+          "revised_expected": "affected"
+        },
+        {
+          "case": "B10",
+          "actual": "unaffected",
+          "original_expected": "unaffected",
+          "revised_expected": "unaffected"
+        },
+        {
+          "case": "B11",
+          "actual": "uncertain",
+          "original_expected": "uncertain",
+          "revised_expected": "uncertain"
+        },
+        {
+          "case": "B12",
+          "actual": "affected",
+          "original_expected": "affected",
+          "revised_expected": "affected"
+        }
+      ],
+      "matched_revised": 12
+    }
+  ]
+}

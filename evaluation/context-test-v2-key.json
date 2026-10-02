@@ -1,0 +1,73 @@
+{
+  "notice": "Revised development labels, not independently adjudicated. Original key and prior scores remain unchanged.",
+  "cases": [
+    {
+      "title": "B01",
+      "expected": "affected",
+      "sha256": "2073a6af736580ab3223b61b68eb32cf866d219ea21d61bdfbd3ec5e9514da4a"
+    },
+    {
+      "title": "B02",
+      "expected": "unaffected",
+      "sha256": "37934a6bdae97232a480534f1b6b1fc76ff385b0e5f86a97a0cf8bec36cbd9bd"
+    },
+    {
+      "title": "B03",
+      "expected": "uncertain",
+      "sha256": "e12c4ba9d74fd2943e732b42a95bc1843418180678110585470a6ee50d252c83"
+    },
+    {
+      "title": "B04",
+      "expected": "uncertain",
+      "sha256": "d0abff79d273911615018ba1287b40f5f8909bd73357cc4125c3464a51920d0d"
+    },
+    {
+      "title": "B05",
+      "expected": "unaffected",
+      "sha256": "140f789fda6eb9197c552265405f27401d172cc16ccb159efb1f45b991b9dfd4"
+    },
+    {
+      "title": "B06",
+      "expected": "uncertain",
+      "sha256": "319446908497a539e7fe1ec7f088e849d4845d55683d40b51219c97c02bd0a0f"
+    },
+    {
+      "title": "B07",
+      "expected": "affected",
+      "sha256": "30c5e751b7a010c7ac5ab2954c053a434b9575f5135f7ee43d3efc1eb04d74ed"
+    },
+    {
+      "title": "B08",
+      "expected": "unaffected",
+      "sha256": "2e91e2959cf2d704932fbc7ed49349cef2a5fe0e35d2dfcda7c088e08f0ce43d"
+    },
+    {
+      "title": "B09",
+      "expected": "affected",
+      "sha256": "f740873d9dcddb7f3eb0e273129000e11d5149cb67074feb9887136344c4daa9"
+    },
+    {
+      "title": "B10",
+      "expected": "unaffected",
+      "sha256": "d92782cc73e415a14f5968634079ce0f27a83e9311bcba66a15a742d08e7d32d"
+    },
+    {
+      "title": "B11",
+      "expected": "uncertain",
+      "sha256": "cc6e9841034170bda27dc0a824e50bfa11eab20d0d5ca766e43942b2c04594f6"
+    },
+    {
+      "title": "B12",
+      "expected": "affected",
+      "sha256": "3b8dd7c6444184f19801b544d75aec80708b68393e9ee18e39cc6c36c3194c13"
+    }
+  ],
+  "version": 2,
+  "amendment": {
+    "case": "B04",
+    "previous": "affected",
+    "expected": "uncertain",
+    "reason": "Same event identity is not established solely by similar team description and matching day/time. Revised after inspecting the first two runs; prospective regression use only.",
+    "previous_run_id": "acefd945-61e7-4a6f-8283-bb730f2d8816"
+  }
+}

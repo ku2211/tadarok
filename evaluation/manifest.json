@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "notice": "عينة تطوير مصطنعة ومعلنة. التصنيفات المتوقعة فرضيات اختبار تحريرية يجب أن يراجعها مختص قبل اعتمادها علميًا. ليست عينة مستقلة أو دليل دقة عامًا.",
+  "correction": {
+    "title": "تصحيح مرجع حديث فضل تعلّم القرآن",
+    "oldText": "حديث «خيركم من تعلم القرآن وعلمه» رواه مسلم.",
+    "newText": "حديث «خيركم من تعلم القرآن وعلمه» رواه البخاري، رقم 5027.",
+    "reference": "صحيح البخاري، كتاب فضائل القرآن، حديث 5027",
+    "referenceUrl": "https://sunnah.com/bukhari:5027",
+    "reason": "نختبر رصد النسبة القديمة في نسخ معاد صياغتها، مع استثناء النصوص التي تصححها أو لا تتعلق بها."
+  },
+  "cases": [
+    {
+      "title": "01-افتتاحية برنامج التعليم",
+      "expected": "affected",
+      "sha256": "ef168519395b0c282a1eb743a992ffc7796ead3a6af02cfbfa7e496a755f44d8"
+    },
+    {
+      "title": "02-ملخص حملة التطوع",
+      "expected": "affected",
+      "sha256": "1ea0f448ec653c67881948cf92f0cfab92feed92c20321dfdfcb9690736d85ba"
+    },
+    {
+      "title": "03-نص الحلقة الأولى",
+      "expected": "affected",
+      "sha256": "6f8a06fa617f9d1636e3e80c0a2d3bbfaf0c41b779bd03300f8af2cd99914526"
+    },
+    {
+      "title": "04-بطاقة تعريف بالدورة",
+      "expected": "affected",
+      "sha256": "716147d409e4d6827c053f538058f0e68e4bebf8213dcfbe00ce0523889b33be"
+    },
+    {
+      "title": "05-مادة للأسئلة المتكررة",
+      "expected": "affected",
+      "sha256": "9670039082a3c5698e790cdecba8c446eacc8e3c6d55e712415c1e94a3123e6b"
+    },
+    {
+      "title": "06-رسالة للمحررين",
+      "expected": "affected",
+      "sha256": "1a6b14d50c7e2e76426f433b5d225dc8af20e291e265b056d69a78796e8530c1"
+    },
+    {
+      "title": "07-مسودة التعليق الصوتي",
+      "expected": "affected",
+      "sha256": "36ab974557e7b9175373deaa3f1082536ec6f1c6ac268018a13fe5ea5ae7643d"
+    },
+    {
+      "title": "08-نشرة المتطوعين",
+      "expected": "affected",
+      "sha256": "3b1cc66ae60c2accc74fa17fffe8f966a56a410a487f582746e57e45251d5949"
+    },
+    {
+      "title": "09-جدول محتوى الأسبوع",
+      "expected": "affected",
+      "sha256": "3052590a3205fd5cd15aa3471df7dd6c61c27cd6924897c5d0c2db6e3157bf1d"
+    },
+    {
+      "title": "10-ملخص لقاء التعليم",
+      "expected": "affected",
+      "sha256": "c971105752ca6553247597191926a2e87c66aff325c6aec8e1385b24e6f61334"
+    },
+    {
+      "title": "11-نص دعوة للمشاركة",
+      "expected": "affected",
+      "sha256": "33bea5d120a01b9c9850d57a408c08ac9b8ab22ddb5ee7d62bad3036667fb978"
+    },
+    {
+      "title": "12-مسودة بطاقة الاقتباس",
+      "expected": "affected",
+      "sha256": "47424facfbc7aed9654b6b9c4311dfc72279ef4e8b953de1e9230f5217d5ac14"
+    },
+    {
+      "title": "13-نسخة موثقة من الدعوة",
+      "expected": "unaffected",
+      "sha256": "c22dbdefb7528a2d572e4c6f64f2b176579202eb75b26a9a809563b0e231e426"
+    },
+    {
+      "title": "14-إعلان مواعيد الزيارة",
+      "expected": "unaffected",
+      "sha256": "9c3fdcda85340d3c04a99c26ac08d2d0605dd13f17e01af3e2332d777c6c7cc1"
+    },
+    {
+      "title": "15-ملاحظة تصحيح منشورة",
+      "expected": "unaffected",
+      "sha256": "4b0d45ec9c88d5aba7a0d9b290f0c27933b874520c713acaf82294f167da8d10"
+    },
+    {
+      "title": "16-قائمة فحص أسماء الكتب",
+      "expected": "unaffected",
+      "sha256": "e1178596dc8a6fb619070395f9c5689f22989306315b5eda93a3331cb5b07ddb"
+    },
+    {
+      "title": "17-تعليق يرفض المرجع القديم",
+      "expected": "unaffected",
+      "sha256": "e48a505fc648e3247bae31206973d3bafa711abc3e9b5b75f4a7eca036170818"
+    },
+    {
+      "title": "18-تقرير نشاط الحلقة",
+      "expected": "unaffected",
+      "sha256": "9950f2f40e07e73575b11af084d407b353062b1d8961187ded79710719664ba2"
+    },
+    {
+      "title": "19-تعليمات التوثيق العامة",
+      "expected": "unaffected",
+      "sha256": "75f8d5212a2a4cca39fe306c85363f8fe547be4879a3cf6e0272b0a3593ba069"
+    },
+    {
+      "title": "20-بطاقة مرجع محدثة",
+      "expected": "unaffected",
+      "sha256": "4ae511667fd4150b0ce1751e20f389698c41c2d6d81eb1df4e9a0e3a9cb2b08c"
+    }
+  ]
+}
