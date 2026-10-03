@@ -3,7 +3,7 @@ import {reconcileChecks, weekdayHints} from './claims';
 import {createClaimContract} from './contract';
 import type {Doc, Correction} from './types';
 
-export const IMPACT_POLICY_VERSION = 'claims-v10-scoped-fields';
+export const IMPACT_POLICY_VERSION = 'claims-v11-deferred-evidence';
 const DEFAULT_MODEL = 'gpt-4.1-2025-04-14';
 export function impactEngine(model?: string) { return `${model || DEFAULT_MODEL} / ${IMPACT_POLICY_VERSION}`; }
 
@@ -13,6 +13,7 @@ const instructions = `أنت مساعد لمراجع بشري في تدارك. �
 املأ خانة واحدة لكل document_key كما هي في مخطط الاستجابة. لا تنشئ معرف مادة ولا تستخدم العنوان بدل مفتاح الخانة. اختر الشاهد أولًا ثم عيّن الحقول التالية. لا تنتج شرحًا حرًا؛ الشرح يبنيه الخادم من الحقول المقيدة ويعرض بجانبه المقطع الأصلي.
 relation تصف وحدة الموضوع وليست صحة الادعاء: same_claim إذا كانت المادة تتناول الموضوع نفسه سواء تبنّت القديم أو نفته أو وثقت إلغاءه أو طبقت التصحيح. اعتماد المرجع أو المعلومة المصححة لا يجعلها موضوعًا مختلفًا. different_claim فقط لموضوع آخر مثبت أو محتوى لا يتناول القديم ولا التصحيح؛ unclear إذا لم يكف السياق لتحديد العلاقة. في المادة التي تجمع اسمًا مشتركًا غير متعلق مع نص يتناول التصحيح، قيّم النص المتعلق بالتصحيح؛ وجود الاسم الآخر لا يلغي صلة المادة. تشابه الأسماء والأيام وحده لا يثبت وحدة الحدث. اختلاف الصياغة لا ينفيها.
 relation_basis يشرح أساس العلاقة: explicit_same_subject لاسم أو إحالة واضحة لنفس الموضوع؛ paraphrased_same_subject لإعادة صياغة واضحة لنفس الموضوع؛ explicit_other_subject عند وجود نص صريح يثبت حدثًا أو ادعاءً آخر؛ no_relevant_content عند عدم وجود تفاصيل ذات صلة؛ missing_subject_details إذا تقاربت التفاصيل لكن هوية الحدث أو المقصود ناقصة. غياب الاسم الدقيق وحده ليس دليلًا على اختلاف الموضوع. إذا وجدت تفاصيل مشتركة ولم يوجد دليل على وحدة الموضوع أو اختلافه فاختر missing_subject_details وrelation=unclear.
+إذا صرحت المادة بأن الحديث أو الاقتباس المقصود أو مرجعه لم يحدد بعد أو أن توثيقه سيضاف لاحقًا، فلا تعد غياب التفاصيل دليلًا على عدم الصلة. اختر missing_subject_details وrelation=unclear ما لم يوجد دليل صريح على موضوع آخر. لا تتجاهل تبني الادعاء القديم إن وجد في جزء آخر.
 shared_detail: إذا relation_basis=explicit_other_subject فالقيمة الوحيدة null: لا نستخرج تفاصيل التشابه بعد إثبات اختلاف الموضوع. في الحالات الأخرى true إذا وردت تفاصيل ذات دلالة تطابق القديم أو الجديد أو وصفًا مكافئًا لها، مثل نفس اليوم والساعة أو نسبة القول نفسها، وfalse عند غيابها. لا يكفي تشابه كلمة عامة. هذا لا يثبت وحدة الموضوع وحده. إذا تشابه اليوم والساعة فلا تقل no_relevant_content لمجرد غياب اسم الفعالية.
 old_claim_stance يصف تبنّي الادعاء القديم في old_text تحديدًا: asserted_now إذا ما زال جزء واحد على الأقل من النص يتبناه كقول قائم؛ not_asserted_now إذا لا يوجد تبنٍّ حالي له، سواء غاب تمامًا أو ذُكر للنفي أو التحذير أو في نسخة ملغاة. لا يلزم التفريق بين الغياب والذكر التاريخي ولا تستخرج هذا التفصيل. unclear إذا الموقف سؤال غير مجاب أو غير واضح.
 replacement_stance: إذا old_claim_stance=asserted_now فالقيمة الوحيدة المسموحة هي not_assessed. بقاء الادعاء السابق كافٍ لتحديد الحاجة للمراجعة؛ لا تضف حكمًا على رفض التصحيح أو تنفيذه في هذه الحالة، ولا تعتبر not_assessed دليل غياب التصحيح. خلاف ذلك يصف الحقل new_text تحديدًا: applied إذا نُفذ أو تتبناه المادة؛ rejected عند رفض صريح؛ proposed إذا طلب ولم يتضح تنفيذه؛ not_mentioned إذا غائب؛ unclear عند الغموض. رفض الجديد لا يعني نفي القديم. لا تستعمل not_assessed إذا كان القديم منفيًا أو غائبًا أو غير واضح.
@@ -78,7 +79,7 @@ export async function analyzeImpact(key: string | undefined, model: string | und
   return {
    ...merged, engine: impactEngine(model),
    usage: {input_tokens: tokenCount(first.usage?.input_tokens) + tokenCount(second.usage?.input_tokens), output_tokens: tokenCount(first.usage?.output_tokens) + tokenCount(second.usage?.output_tokens)},
-   checks: {policy: IMPACT_POLICY_VERSION, passes: 2, disagreements: merged.disagreements,
+   checks: {policy: IMPACT_POLICY_VERSION, passes: 2, disagreements: merged.disagreements, evidenceGaps: merged.evidenceGaps,
     first: first.checks, second: second.checks},
   };
  } finally {clearTimeout(timer);}

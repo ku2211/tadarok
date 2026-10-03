@@ -29,7 +29,7 @@ test('Responses contract maps a selected passage to the stored quotation',async(
   assert.equal(request.model,'gpt-4.1-2025-04-14');
   return Response.json({status:'completed',output:[{type:'message',content:[{type:'output_text',text:JSON.stringify({assessments:{doc_1:{passage_index:1,relation:'same_claim',relation_basis:'explicit_same_subject',shared_detail:true,old_claim_stance:'asserted_now',replacement_stance:'not_assessed',version_context:'current'}}})}]}]});
  };
- try {const result=await analyzeImpact('test-key-not-a-secret',undefined,correction,docs);assert.equal(result.assessments[0].document_id,'doc-1');assert.equal(result.assessments[0].quote,'النصُ  القديم هنا.');assert.equal(result.checks.passes,2);assert.match(result.engine,/claims-v10-scoped-fields/);}finally{globalThis.fetch=previousFetch;}
+ try {const result=await analyzeImpact('test-key-not-a-secret',undefined,correction,docs);assert.equal(result.assessments[0].document_id,'doc-1');assert.equal(result.assessments[0].quote,'النصُ  القديم هنا.');assert.equal(result.checks.passes,2);assert.match(result.engine,/claims-v11-deferred-evidence/);}finally{globalThis.fetch=previousFetch;}
 });
 
 test('dual reading merges disagreements conservatively and counts both requests',async()=>{

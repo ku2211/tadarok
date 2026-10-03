@@ -65,7 +65,7 @@ try{
  const result=await req('owner','analyze',{spaceId:testSpace,id:testCorrection});
  assert.equal(providerCalls,2);assert.equal(result.findings[0].verdict,'affected');
  const lastRun=result.corrections[0].last_run_id;
- assert.match(result.runs.find(r=>r.id===lastRun).engine,/gpt-4.1-2025-04-14 \/ claims-v10-scoped-fields/);
+ assert.match(result.runs.find(r=>r.id===lastRun).engine,/gpt-4.1-2025-04-14 \/ claims-v11-deferred-evidence/);
  const details=JSON.parse(result.events.find(e=>e.action==='analysis_finished').details);
  assert.equal(details.checks.passes,2);assert.equal(details.checks.first.length,1);assert.equal(details.checks.second.length,1);
  const successfulFetch=globalThis.fetch;

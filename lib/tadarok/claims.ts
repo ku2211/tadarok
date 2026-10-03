@@ -108,11 +108,25 @@ export function groundClaimChecks(value: unknown, docs: Pick<Doc,'id'|'body'>[])
  return {assessments, checks};
 }
 
+// Conservative, source-grounded guard for explicit deferred evidence only.
+// It does not establish relevance or scientific validity and never hides an affected claim.
+export function deferredEvidencePassage(body: string): string | null {
+ const passages = body.match(/[^.!؟\n]+[.!؟\n]*/gu) || [];
+ for (const original of passages) {
+  const text = original.replace(/[\u064B-\u065F\u0670\u0640]/gu, '').replace(/[أإآ]/gu, 'ا');
+  const deferred = /(?:^|\s)(?:سنضيف|سنذكر|سنحدد|سنستكمل|سيضاف|سيتم\s+(?:اضافة|تحديد|استكمال)|لم\s+(?:نحدد|نذكر|نوثق|يحدد|يذكر)|لم\s+يتم\s+(?:تحديد|توثيق)|يحتاج\s+الى\s+(?:توثيق|استكمال)|بانتظار\s+(?:توثيق|تحديد))/u;
+  const evidence = /(?:توثيق|المرجع|مرجع|المصدر|مصدر|السند|سند|الحديث\s+المقصود|الاقتباس\s+المقصود)/u;
+  if (deferred.test(text) && evidence.test(text)) return original.trim();
+ }
+ return null;
+}
+
 // A second reading is an agreement gate, not a claim of independent scientific validation.
 export function reconcileChecks(first: Assessment[], second: Assessment[], docs: Pick<Doc,'id'|'body'>[], checks?:{first:ClaimCheck[];second:ClaimCheck[]}) {
  const primary = validateAssessments({assessments: first}, docs);
  const review = new Map(validateAssessments({assessments: second}, docs).map(a => [a.document_id, a]));
  const disagreements: string[] = [];
+ const evidenceGaps: string[] = [];
  const firstChecks=new Map(checks?.first.map(c=>[c.document_id,c])),secondChecks=new Map(checks?.second.map(c=>[c.document_id,c]));
  if(checks&&(firstChecks.size!==docs.length||secondChecks.size!==docs.length||docs.some(d=>!firstChecks.has(d.id)||!secondChecks.has(d.id))))throw new UserError('لم تكتمل مقارنة أدلة القراءتين.',502);
  const assessments = primary.map(a => {
@@ -122,11 +136,20 @@ export function reconcileChecks(first: Assessment[], second: Assessment[], docs:
   // A clearly unrelated subject does not depend on the age of its version.
   if(ca?.relation!=='different_claim'||cb?.relation!=='different_claim')fields.push('version_context','replacement_stance');
   const contextConflict=!!(ca&&cb&&fields.some(field=>ca[field]!==cb[field]));
-  if (a.verdict === b.verdict&&!contextConflict) return b.quote ? b : a;
+  if (a.verdict === b.verdict&&!contextConflict) {
+   const deferred = a.verdict === 'unaffected' && ca?.relation_basis === 'no_relevant_content' && cb?.relation_basis === 'no_relevant_content'
+    ? deferredEvidencePassage(docs.find(d=>d.id===a.document_id)!.body) : null;
+   if (deferred) {
+    evidenceGaps.push(a.document_id);
+    return {document_id:a.document_id,verdict:'uncertain' as const,quote:deferred,
+     reason:'يتضمن النص تأجيلًا أو نقصًا صريحًا في التوثيق. عدم العثور على صلة لا يحسم عدم التأثر؛ يلزم استكمال الدليل وتحديد العلاقة بهذا التصحيح.'};
+   }
+   return b.quote ? b : a;
+  }
   disagreements.push(a.document_id);
   const quote = a.quote || b.quote;
   return {document_id: a.document_id, verdict: 'uncertain' as const, quote,
    reason: 'اختلفت قراءتا السياق في تحديد الموضوع أو موقف النص أو الحاجة إلى التصحيح. راجع المقطع مع المادة كاملة أو أحله للمختص؛ لم يُعتمد تصنيف حاسم.'};
  });
- return {assessments: validateAssessments({assessments}, docs), disagreements};
+ return {assessments: validateAssessments({assessments}, docs), disagreements, evidenceGaps};
 }

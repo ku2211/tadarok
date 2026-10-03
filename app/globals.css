@@ -100,3 +100,5 @@ h1 { font-size: clamp(30px,3.3vw,46px); font-weight: 600; line-height: 1.5; marg
 .quote-label { display: block; font-size: 10px; color: #778467; margin-bottom: 5px; }
 
 .evidence-context { margin: 0 0 16px; border: 1px solid #e7ece0; border-radius: 8px; color: #536147; font-size: 12px; }.evidence-context summary { cursor: pointer; padding: 10px 13px; font-weight: 600; }.evidence-context[open] summary { border-bottom: 1px solid #e7ece0; }.evidence-context p { padding: 12px 14px; overflow-wrap: anywhere; }
+
+.analysis-history-note {font-size: 14px; line-height: 1.8; padding: 12px 16px; background: #edf4ef; color: #174d3d; border-inline-start: 3px solid #40775e; margin-bottom: 16px;}
