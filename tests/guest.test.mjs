@@ -15,7 +15,16 @@ await req('',null,{},401);await req(a,null,{},401,'/api/tadarok');await req(a,nu
 await req(a,'add_member',{spaceId:x.space.id,email:'someone@example.test',role:'reviewer'},403);await req(a,'create_space',{name:'extra'},403);
 const cross=await startGuest(new Request('https://test.local/api/try/session',{method:'POST',headers:{origin:'https://evil.test'}}));assert.equal(cross.status,403);
 globalThis.fetch=async(_u,options)=>{const input=JSON.parse(JSON.parse(options.body).input);return Response.json({status:'completed',output:[{type:'message',content:[{type:'output_text',text:JSON.stringify({assessments:Object.fromEntries(input.documents.map(d=>[d.document_key,{relation:'same_claim',relation_basis:'explicit_same_subject',shared_detail:true,old_claim_stance:'not_asserted_now',replacement_stance:'applied',version_context:'current',passage_index:0}]))})}]}]});};
+// Regression: a rejected concurrent request must spend no guest budget.
+const busyId='regression-busy-run';
+sql.prepare("INSERT INTO runs(id,space_id,correction_id,engine,status,actor,doc_count,created_at) VALUES(?,?,?,'test','running','test',5,?)").run(busyId,x.space.id,x.corrections[0].id,new Date().toISOString());
+const budgetBefore=sql.prepare('SELECT COUNT(*) n FROM guest_analysis_budget').get().n;
+await req(a,'analyze',{id:x.corrections[0].id},429);
+assert.equal(sql.prepare('SELECT COUNT(*) n FROM guest_analysis_budget').get().n,budgetBefore,'busy requests must not consume quota');
+assert.equal(sql.prepare('SELECT COUNT(*) n FROM runs WHERE space_id=?').get(x.space.id).n,1,'busy requests must not create runs');
+sql.prepare('DELETE FROM runs WHERE id=?').run(busyId);
 x=await req(a,'analyze',{id:x.corrections[0].id});assert.equal(x.findings.length,5);
+assert.equal(sql.prepare('SELECT COUNT(*) n FROM guest_analysis_budget WHERE id=?').get(x.corrections[0].last_run_id).n,1,'accepted run and budget share an atomic reservation');
 let f=x.findings[0];const snap=f=>({documentVersion:f.document_version,expectedStatus:f.status,expectedReviewedAt:f.reviewed_at});
 x=await req(a,'review',{id:f.id,decision:'approve',note:'اختبار حفظ القرار',...snap(f)});assert.equal(x.findings[0].status,'approved');
 x=await req(a);assert.equal(x.findings[0].status,'approved');f=x.findings[0];let doc=x.documents.find(d=>d.id===f.document_id);
@@ -37,6 +46,7 @@ for(let s=0;s<4;s++){
 }
 await req(b,'analyze',{id:y.corrections[0].id},429);
 assert.equal(sql.prepare('SELECT COUNT(*) n FROM guest_analysis_budget WHERE space_id=?').get(y.space.id).n,0);
+assert.equal(sql.prepare('SELECT COUNT(*) n FROM runs WHERE space_id=?').get(y.space.id).n,0,'shared quota rejection must not leave a running lock');
 assert.equal((await req(b)).documents.length,5);
 for(const space of fillSpaces)sql.prepare('UPDATE guest_analysis_budget SET created_at=? WHERE space_id=?').run('2000-01-01T00:00:00.000Z',space);
 await req(b,'analyze',{id:y.corrections[0].id});

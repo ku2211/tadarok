@@ -24,8 +24,21 @@ export async function startGuest(request:Request){
  return Response.json({ready:true},{headers:{...headers,'Set-Cookie':`${COOKIE}=${token}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=86400`}});
  }catch(e){return Response.json({error:e instanceof UserError?e.message:'تعذر بدء التجربة. حاول مجددًا.'},{status:e instanceof UserError?e.status:503,headers});}
 }
-export async function reserveGuestAnalysis(c:Context){
- const at=now(),since=new Date(Date.now()-86400000).toISOString();
- const result=await c.db.prepare('INSERT INTO guest_analysis_budget(id,space_id,created_at) SELECT ?,?,? WHERE (SELECT COUNT(*) FROM guest_analysis_budget WHERE space_id=?)<20 AND (SELECT COUNT(*) FROM guest_analysis_budget WHERE created_at>?)<100').bind(uid(),c.space!.id,at,c.space!.id,since).run();
- if(!result.meta.changes)throw new UserError('بلغت التجربة حد الفحص للجلسة أو السعة اليومية. يمكنك متابعة المراجعة والتصدير أو تسجيل الدخول لمساحة خاصة.',429);
+// Reserve both a run and its guest budget in one D1 transaction. A rejected
+// concurrent request must not spend a session/global analysis allowance.
+export async function reserveGuestAnalysis(c:Context,run:{id:string;correctionId:string;engine:string;docCount:number;createdAt:string}){
+ const since=new Date(Date.parse(run.createdAt)-86400000).toISOString();
+ const activeSince=new Date(Date.parse(run.createdAt)-120000).toISOString();
+ const results=await c.db.batch([
+  c.db.prepare(`INSERT INTO guest_analysis_budget(id,space_id,created_at)
+   SELECT ?,?,? WHERE (SELECT COUNT(*) FROM guest_analysis_budget WHERE space_id=?)<20
+   AND (SELECT COUNT(*) FROM guest_analysis_budget WHERE created_at>?)<100
+   AND (SELECT COUNT(*) FROM runs WHERE space_id=? AND created_at>?)<20
+   AND NOT EXISTS(SELECT 1 FROM runs WHERE space_id=? AND status='running' AND created_at>?)`)
+   .bind(run.id,c.space!.id,run.createdAt,c.space!.id,since,c.space!.id,since,c.space!.id,activeSince),
+  c.db.prepare(`INSERT INTO runs(id,space_id,correction_id,engine,status,actor,doc_count,created_at)
+   SELECT ?,?,?,?,'running',?,?,? WHERE EXISTS(SELECT 1 FROM guest_analysis_budget WHERE id=? AND space_id=?)`)
+   .bind(run.id,c.space!.id,run.correctionId,run.engine,c.actor.name,run.docCount,run.createdAt,run.id,c.space!.id)
+ ]);
+ if(!results[1].meta.changes)throw new UserError('يوجد تحليل جارٍ أو بلغت التجربة حد الفحص للجلسة أو السعة اليومية. يمكنك متابعة المراجعة والتصدير أو المحاولة لاحقًا.',429);
 }

@@ -1,0 +1,27 @@
+name: Verify Tadarok
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install pinned package manager and dependencies
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.25.0 --activate
+          pnpm install --frozen-lockfile
+      - name: Tests including API and guest isolation
+        run: node --loader ./tests/loader.mjs --test tests/*.test.mjs
+      - name: Type check
+        run: node node_modules/typescript/bin/tsc --noEmit
+      - name: Build
+        run: pnpm build
