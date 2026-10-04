@@ -3,7 +3,7 @@ import {reconcileChecks, weekdayHints} from './claims';
 import {createClaimContract} from './contract';
 import type {Doc, Correction} from './types';
 
-export const IMPACT_POLICY_VERSION = 'claims-v11-deferred-evidence';
+export const IMPACT_POLICY_VERSION = 'claims-v12-unrelated-agreement';
 const DEFAULT_MODEL = 'gpt-4.1-2025-04-14';
 export function impactEngine(model?: string) { return `${model || DEFAULT_MODEL} / ${IMPACT_POLICY_VERSION}`; }
 

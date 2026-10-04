@@ -135,9 +135,13 @@ export function reconcileChecks(first: Assessment[], second: Assessment[], docs:
   const fields: (keyof Claim)[]=['relation','relation_basis','old_claim_stance','shared_detail'];
   // A clearly unrelated subject does not depend on the age of its version.
   if(ca?.relation!=='different_claim'||cb?.relation!=='different_claim')fields.push('version_context','replacement_stance');
-  const contextConflict=!!(ca&&cb&&fields.some(field=>ca[field]!==cb[field]));
+  // Explicit other-subject evidence and a complete absence of relevant content
+  // are compatible only when neither reading reports any unresolved overlap.
+  const safelyUnrelated=(c:ClaimCheck|undefined)=>!!c&&!c.conflict&&c.verdict==='unaffected'&&c.relation==='different_claim'&&c.old_claim_stance==='not_asserted_now'&&c.replacement_stance==='not_mentioned'&&((c.relation_basis==='explicit_other_subject'&&c.shared_detail===null)||(c.relation_basis==='no_relevant_content'&&c.shared_detail===false));
+  const equivalentUnrelated=safelyUnrelated(ca)&&safelyUnrelated(cb);
+  const contextConflict=!equivalentUnrelated&&!!(ca&&cb&&fields.some(field=>ca[field]!==cb[field]));
   if (a.verdict === b.verdict&&!contextConflict) {
-   const deferred = a.verdict === 'unaffected' && ca?.relation_basis === 'no_relevant_content' && cb?.relation_basis === 'no_relevant_content'
+   const deferred = a.verdict === 'unaffected' && (ca?.relation_basis === 'no_relevant_content' || cb?.relation_basis === 'no_relevant_content')
     ? deferredEvidencePassage(docs.find(d=>d.id===a.document_id)!.body) : null;
    if (deferred) {
     evidenceGaps.push(a.document_id);
