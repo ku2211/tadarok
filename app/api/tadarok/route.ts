@@ -2,12 +2,18 @@ import {env} from 'cloudflare:workers';
 import {context,state,needSpace,uid,now,audit} from '@/lib/tadarok/server';
 import {UserError,cleanString,safeUrl,assertVersion,assertReviewSnapshot,canApprove} from '@/lib/tadarok/domain';
 import {analyzeImpact,impactEngine} from '@/lib/tadarok/ai';
+import {exportForReview} from '@/lib/tadarok/export';
 import {exampleCorrection,exampleDocuments} from '@/lib/tadarok/example';
 import type {Doc,Correction,Finding} from '@/lib/tadarok/types';
 export const dynamic='force-dynamic';
 const json=(data:unknown,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
 function failure(e:unknown){if(e instanceof UserError)return json({error:e.message},e.status);console.error('Tadarok operation failed',e instanceof Error?e.name:'unknown');return json({error:'تعذر إكمال العملية. احتفظ بنصك وحاول مجددًا.'},503);}
-export async function GET(request:Request){try{return json(await state(await context(new URL(request.url).searchParams.get('space')||undefined,request)));}catch(e){return failure(e);}}
+export async function GET(request:Request){try{
+ const params=new URL(request.url).searchParams;
+ const data=await state(await context(params.get('space')||undefined,request));
+ if(params.get('export')==='1')return new Response(JSON.stringify(exportForReview(data),null,2),{headers:{'Content-Type':'application/json;charset=utf-8','Content-Disposition':'attachment; filename="tadarok-review-report.json"','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
+ return json(data);
+ }catch(e){return failure(e);}}
 export async function POST(request:Request){
  try{
  if(request.headers.get('sec-fetch-site')==='cross-site')throw new UserError('طلب غير مسموح.',403);

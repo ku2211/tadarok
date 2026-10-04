@@ -20,6 +20,14 @@ await req('other','add_document',{spaceId,title:'اختبار عزل',body:'نص
 await req('owner','add_document',{spaceId,title:'بدون إقرار',body:'نص اختبار اصطناعي.'},400);
 s=await req('owner','example',{spaceId});
 await req('owner','analyze',{spaceId,id:s.corrections[0].id},503);
+// Downloads must authenticate and preserve workspace isolation and redaction.
+const exportUrl='https://test.local/api/tadarok?export=1&space='+spaceId;
+for(const [identity,status] of [[null,401],[identities.other,403],[identities.owner,200]]){
+ globalThis.__tadarokTestIdentity=identity;
+ const response=await GET(new Request(exportUrl));assert.equal(response.status,status);
+ if(status===200){assert.match(response.headers.get('content-disposition'),/attachment/);assert.equal(response.headers.get('cache-control'),'no-store');const report=await response.json();assert.equal(report.scope.completeArchive,false);assert.equal(report.documents.length,5);assert.equal(report.actor.email,'');assert.equal(JSON.stringify(report).includes('owner@example.test'),false);}
+}
+
 await req('owner','add_member',{spaceId,email:identities.editor.email,role:'editor'});
 const unaffected=s.findings.find(f=>f.verdict==='unaffected');
 await req('editor','review',{spaceId,id:unaffected.id,decision:'approve',note:'راجعنا النص.'},403);
