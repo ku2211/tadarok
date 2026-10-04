@@ -4,9 +4,6 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "تدارك — متابعة أثر التصحيح",
   description: "مساحة لمراجعة أثر تصحيح المعلومة في النصوص المرتبطة بها.",
-  other: {
-    "codex-preview": "development",
-  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
