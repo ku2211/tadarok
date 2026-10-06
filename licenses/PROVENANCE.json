@@ -1,0 +1,140 @@
+[
+  {
+    "key": "embla",
+    "usage": "embla-carousel-react@8.6.0",
+    "source_url": "https://github.com/davidjerleke/embla-carousel/blob/0fe65834136f1aa35e4c1a4a477e5ccb4bb5ee54/LICENSE",
+    "source_git_blob_sha": "2376624f527f4f1e53887552e42b004ab4056898",
+    "local_file": "licenses/embla.txt",
+    "reviewed_on": "2026-10-06"
+  },
+  {
+    "key": "input",
+    "usage": "input-otp@1.4.2",
+    "source_url": "https://github.com/guilhermerodz/input-otp/blob/81ccdb48c010d800b24942aa231909f0c971b1ca/LICENSE",
+    "source_git_blob_sha": "3d8feae905f69bb4279c5abe93d005c7ccc5bdf7",
+    "local_file": "licenses/input.txt",
+    "reviewed_on": "2026-10-06"
+  },
+  {
+    "key": "rsc",
+    "usage": "@vitejs/plugin-rsc@0.5.26",
+    "source_url": "https://github.com/vitejs/vite-plugin-react/blob/65d378fc4d9bd8d383dc7598817261b3bdcb0861/LICENSE",
+    "source_git_blob_sha": "9c1b313d7b18166024d52473b2ed645f5b4e64dd",
+    "local_file": "licenses/rsc.txt",
+    "reviewed_on": "2026-10-06"
+  },
+  {
+    "key": "workerd",
+    "usage": "@cloudflare/workers-types@4.20260515.1 (Apache-2.0 option)",
+    "source_url": "https://github.com/cloudflare/workerd/blob/e8c16f4875b5228047f081beadbfe5d7aadb5b5d/LICENSE",
+    "source_git_blob_sha": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
+    "local_file": "licenses/workerd.txt",
+    "reviewed_on": "2026-10-06"
+  },
+  {
+    "key": "drizzle-orm",
+    "usage": "drizzle-orm@0.45.2",
+    "source_url": "https://github.com/drizzle-team/drizzle-orm/blob/273c78071d4841b497f5144734b38294df7ec64b/LICENSE",
+    "source_git_blob_sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+    "local_file": "licenses/drizzle-orm.txt",
+    "reviewed_on": "2026-10-06"
+  },
+  {
+    "key": "cloudflare",
+    "usage": "@cloudflare/vite-plugin@1.37.1; wrangler@4.92.0 (MIT option)",
+    "source_url": "https://github.com/cloudflare/workers-sdk/blob/a3fa623f2abf192e57d876c727bfa107aa297ec9/LICENSE-MIT",
+    "source_git_blob_sha": "a0e7ebf133868d6c1759cfb09f3c05d4cce430c8",
+    "local_file": "licenses/cloudflare.txt",
+    "reviewed_on": "2026-10-06"
+  },
+  {
+    "key": "cloudflare-apache",
+    "usage": "wrangler@4.92.0 (Apache-2.0 option)",
+    "source_url": "https://github.com/cloudflare/workers-sdk/blob/a3fa623f2abf192e57d876c727bfa107aa297ec9/LICENSE-APACHE",
+    "source_git_blob_sha": "1b5ec8b78e237b5c3b3d812a7c0a6589d0f7161d",
+    "local_file": "licenses/cloudflare-apache.txt",
+    "reviewed_on": "2026-10-06"
+  },
+  {
+    "key": "next",
+    "usage": "eslint-config-next@16.3.4",
+    "source_url": "https://github.com/vercel/next.js/blob/299180d3315c7ebd7b199d2b1a265b5986c5fc7d/license.md",
+    "source_git_blob_sha": "5948ee9bd0de5064423688a2967ab3111c2658ed",
+    "local_file": "licenses/next.txt",
+    "reviewed_on": "2026-10-06"
+  },
+  {
+    "key": "readex",
+    "usage": "Readex Pro — presentation fonts",
+    "source_url": "https://github.com/google/fonts/blob/main/ofl/readexpro/OFL.txt",
+    "source_git_blob_sha": "7e8df7db0e45a02b3d4828f9190b9c184c7b6a8a",
+    "local_file": "licenses/readex.txt",
+    "reviewed_on": "2026-10-06"
+  },
+  {
+    "key": "urbanist",
+    "usage": "Urbanist — embedded presentation font",
+    "source_url": "https://github.com/google/fonts/blob/main/ofl/urbanist/OFL.txt",
+    "source_git_blob_sha": "828d6f7cb00f110ebfeffb0bcf1fe43312f53d3f",
+    "local_file": "licenses/urbanist.txt",
+    "reviewed_on": "2026-10-06"
+  },
+  {
+    "key": "noto",
+    "usage": "Noto Sans Arabic — rendered video text",
+    "source_url": "https://github.com/notofonts/arabic/blob/main/OFL.txt",
+    "source_git_blob_sha": "d4e170557fc8bcf8d1dcb317d9f1accaf8acf223",
+    "local_file": "licenses/noto.txt",
+    "reviewed_on": "2026-10-06"
+  },
+  {
+    "key": "shadcn",
+    "usage": "shadcn/ui",
+    "source_url": "https://github.com/shadcn-ui/ui/blob/main/LICENSE.md",
+    "source_git_blob_sha": "fad4d887a681dd49233e5ed01ee2c7a1513089a0",
+    "local_file": "licenses/shadcn.txt",
+    "reviewed_on": "2026-10-06"
+  },
+  {
+    "key": "rsc-vendored-react",
+    "usage": "React code vendored by @vitejs/plugin-rsc@0.5.26",
+    "source_url": "https://registry.npmjs.org/@vitejs/plugin-rsc/-/plugin-rsc-0.5.26.tgz",
+    "tarball_integrity_verified": "sha512-T8W8ODEutblw9qXQB512LDPyv1tAbJRD/Gf0QEGsAoydl4nxEtIrghnhoI9oLY9R+7aw+cLk1ZEltxWHWf4aHw==",
+    "source_path": "package/dist/vendor/react-server-dom/LICENSE",
+    "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+    "local_file": "licenses/rsc-vendored-react.txt",
+    "reviewed_on": "2026-10-06"
+  },
+  {
+    "key": "dejavu",
+    "usage": "DejaVu Sans — rendered Latin text in video",
+    "source_url": "https://dejavu-fonts.github.io/",
+    "evidence": "Installed fonts-dejavu-core copyright, font section only; Debian packaging section excluded",
+    "local_file": "licenses/dejavu.txt",
+    "reviewed_on": "2026-10-06"
+  },
+  {
+    "key": "starter-file.svg",
+    "usage": "public/file.svg",
+    "source_url": "https://github.com/vercel/next.js/blob/299180d3315c7ebd7b199d2b1a265b5986c5fc7d/packages/create-next-app/templates/app/js/public/file.svg",
+    "reviewed_on": "2026-10-06",
+    "comparison": "identical after stripping whitespace",
+    "license_file": "licenses/next.txt"
+  },
+  {
+    "key": "starter-globe.svg",
+    "usage": "public/globe.svg",
+    "source_url": "https://github.com/vercel/next.js/blob/299180d3315c7ebd7b199d2b1a265b5986c5fc7d/packages/create-next-app/templates/app/js/public/globe.svg",
+    "reviewed_on": "2026-10-06",
+    "comparison": "identical after stripping whitespace",
+    "license_file": "licenses/next.txt"
+  },
+  {
+    "key": "starter-window.svg",
+    "usage": "public/window.svg",
+    "source_url": "https://github.com/vercel/next.js/blob/299180d3315c7ebd7b199d2b1a265b5986c5fc7d/packages/create-next-app/templates/app/js/public/window.svg",
+    "reviewed_on": "2026-10-06",
+    "comparison": "identical after stripping whitespace",
+    "license_file": "licenses/next.txt"
+  }
+]

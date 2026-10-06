@@ -1,5 +1,5 @@
 {
-  "scope": "Direct dependencies only. Keep transitive package license files from the package distribution.",
+  "scope": "42 direct dependencies, matched to package.json and pnpm-lock.yaml on 2026-10-06. Full lockfile inventory is docs/DEPENDENCY-LICENSE-INVENTORY-2026-10-06.json. See docs/SOURCE-LICENSE-REVIEW-2026-10-06.md for scope and unresolved license evidence. An SPDX declaration is not a complete bundle clearance.",
   "dependencies": [
     {
       "name": "@base-ui/react",
@@ -300,7 +300,8 @@
       "repository": {
         "type": "git",
         "url": "git+https://github.com/drizzle-team/drizzle-orm.git"
-      }
+      },
+      "review_note": "Package and version-tag package.json declare MIT. No MIT license file was found in the npm archive or version-tag tree; the repository root contains Apache-2.0. Preserve the declaration without resolving the conflict by assumption. Build/schema-generation tool; no import from application runtime source found."
     },
     {
       "name": "eslint",
@@ -381,5 +382,6 @@
         "directory": "packages/wrangler"
       }
     }
-  ]
+  ],
+  "reviewed_on": "2026-10-06"
 }
