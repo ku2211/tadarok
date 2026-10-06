@@ -136,5 +136,14 @@
     "reviewed_on": "2026-10-06",
     "comparison": "identical after stripping whitespace",
     "license_file": "licenses/next.txt"
+  },
+  {
+    "key": "react-remove-scroll-bar",
+    "usage": "react-remove-scroll-bar@2.3.8",
+    "source_url": "https://github.com/theKashey/react-remove-scroll-bar/blob/8ca9ba5ea52de03308fe8ced94f7b159a44d28ff/LICENSE",
+    "source_git_blob_sha": "7c08c3990396ecefd90f99ff5d9a34f26f5b5616",
+    "local_file": "licenses/react-remove-scroll-bar.txt",
+    "reviewed_on": "2026-10-06",
+    "qualification": "Official source package.json says 2.3.7; installed package says 2.3.8. Four source files compiled with TypeScript 5.9.3 match the installed JavaScript AST. npm gitHead was not resolvable. See docs/SCROLLBAR-SOURCE-COMPARISON-2026-10-06.json."
   }
 ]

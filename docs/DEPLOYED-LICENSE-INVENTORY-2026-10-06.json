@@ -1,0 +1,1946 @@
+{
+  "schema_version": 1,
+  "method": "generateBundle module records with nonzero rendered length, plus explicit CSS/virtual-helper and vendored-asset notices; final chunk hashes are read after build completion",
+  "lockfile_sha256": "77360f37a611d60c2053152629b32e436cb5d002d21f99a73d5d55ed32852a7d",
+  "summary": {
+    "bundled_javascript_packages": 51,
+    "css_or_helper_packages": 5,
+    "distinct_runtime_notice_packages": 56,
+    "declared_direct_packages": 41,
+    "missing_license_notices": 0,
+    "unresolved_package_imports": 0
+  },
+  "platform_imports": [
+    "cloudflare:workers",
+    "node:async_hooks",
+    "node:fs",
+    "node:path"
+  ],
+  "generated_local_imports": [
+    "./vinext-client-assets.js",
+    "virtual:vite-rsc/assets-manifest"
+  ],
+  "packages": [
+    {
+      "name": "@cloudflare/vite-plugin",
+      "version": "1.37.1",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/cloudflare/workers-sdk.git",
+        "directory": "packages/vite-plugin-cloudflare"
+      },
+      "scopes": [
+        "declared-direct",
+        "generated-css-or-helper"
+      ],
+      "modules": [],
+      "notices": [
+        {
+          "source": "licenses/cloudflare.txt",
+          "sha256": "9bb3b077cc8628334bab25961223dd8207252c8a56aa054195be38f1c042aaf4"
+        }
+      ]
+    },
+    {
+      "name": "@floating-ui/core",
+      "version": "1.8.0",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/floating-ui/floating-ui.git",
+        "directory": "packages/core"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/floating-ui.core.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@floating-ui/core@1.8.0/LICENSE",
+          "sha256": "0e4c9a9b6c71019cbbea3bdc20b01223110a9035700f9c960c8fcbf78c2325ce"
+        }
+      ]
+    },
+    {
+      "name": "@floating-ui/dom",
+      "version": "1.8.0",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/floating-ui/floating-ui.git",
+        "directory": "packages/dom"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/floating-ui.dom.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@floating-ui/dom@1.8.0/LICENSE",
+          "sha256": "0e4c9a9b6c71019cbbea3bdc20b01223110a9035700f9c960c8fcbf78c2325ce"
+        }
+      ]
+    },
+    {
+      "name": "@floating-ui/react-dom",
+      "version": "2.1.9",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/floating-ui/floating-ui.git",
+        "directory": "packages/react-dom"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/floating-ui.react-dom.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@floating-ui/react-dom@2.1.9/LICENSE",
+          "sha256": "0e4c9a9b6c71019cbbea3bdc20b01223110a9035700f9c960c8fcbf78c2325ce"
+        }
+      ]
+    },
+    {
+      "name": "@floating-ui/utils",
+      "version": "0.2.12",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/floating-ui/floating-ui.git",
+        "directory": "packages/utils"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/floating-ui.utils.dom.mjs",
+        "dist/floating-ui.utils.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@floating-ui/utils@0.2.12/LICENSE",
+          "sha256": "0e4c9a9b6c71019cbbea3bdc20b01223110a9035700f9c960c8fcbf78c2325ce"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/number",
+      "version": "1.1.3",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/core/number"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/number@1.1.3/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/primitive",
+      "version": "1.1.7",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/core/primitive"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/primitive@1.1.7/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-collection",
+      "version": "1.1.15",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/collection"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-collection@1.1.15/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-compose-refs",
+      "version": "1.1.5",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/compose-refs"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-compose-refs@1.1.5/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-context",
+      "version": "1.2.2",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/context"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-context@1.2.2/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-dialog",
+      "version": "1.1.23",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/dialog"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-dialog@1.1.23/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-direction",
+      "version": "1.1.4",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/direction"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-direction@1.1.4/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-dismissable-layer",
+      "version": "1.1.19",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/dismissable-layer"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-dismissable-layer@1.1.19/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-focus-guards",
+      "version": "1.1.6",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/focus-guards"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-focus-guards@1.1.6/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-focus-scope",
+      "version": "1.1.16",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/focus-scope"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-focus-scope@1.1.16/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-id",
+      "version": "1.1.4",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/id"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-id@1.1.4/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-popper",
+      "version": "1.3.7",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/popper"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-popper@1.3.7/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-portal",
+      "version": "1.1.17",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/portal"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-portal@1.1.17/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-presence",
+      "version": "1.1.10",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/presence"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-presence@1.1.10/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-primitive",
+      "version": "2.1.10",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/primitive"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-primitive@2.1.10/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-roving-focus",
+      "version": "1.1.19",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/roving-focus"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-roving-focus@1.1.19/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-select",
+      "version": "2.3.7",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/select"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-select@2.3.7/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-slot",
+      "version": "1.3.3",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/slot"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-slot@1.3.3/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-tabs",
+      "version": "1.1.21",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/tabs"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-tabs@1.1.21/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-use-callback-ref",
+      "version": "1.1.4",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/use-callback-ref"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-use-callback-ref@1.1.4/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-use-controllable-state",
+      "version": "1.2.6",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/use-controllable-state"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-use-controllable-state@1.2.6/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-use-effect-event",
+      "version": "0.0.5",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/use-effect-event"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-use-effect-event@0.0.5/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-use-is-hydrated",
+      "version": "0.1.3",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/use-is-hydrated"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-use-is-hydrated@0.1.3/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-use-layout-effect",
+      "version": "1.1.4",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/use-layout-effect"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-use-layout-effect@1.1.4/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-use-previous",
+      "version": "1.1.4",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/use-previous"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-use-previous@1.1.4/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-use-size",
+      "version": "1.1.4",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/use-size"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-use-size@1.1.4/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-visually-hidden",
+      "version": "1.2.11",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radix-ui/primitives.git",
+        "directory": "packages/react/visually-hidden"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:@radix-ui/react-visually-hidden@1.2.11/LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@vitejs/plugin-rsc",
+      "version": "0.5.26",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vitejs/vite-plugin-react.git",
+        "directory": "packages/plugin-rsc"
+      },
+      "scopes": [
+        "client",
+        "declared-direct",
+        "rsc",
+        "ssr"
+      ],
+      "modules": [
+        "dist/browser.js",
+        "dist/core/browser.js",
+        "dist/core/rsc.js",
+        "dist/core/ssr.js",
+        "dist/dist-rz-Bnebz.js",
+        "dist/react/browser.js",
+        "dist/react/rsc.js",
+        "dist/react/ssr.js",
+        "dist/shared-BViDMJTQ.js",
+        "dist/ssr.js"
+      ],
+      "notices": [
+        {
+          "source": "licenses/rsc.txt",
+          "sha256": "29b68325fe026047d13e187b44c33b2acacf7dc647dec4583702e59f235e13b5"
+        }
+      ]
+    },
+    {
+      "name": "aria-hidden",
+      "version": "1.2.6",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/theKashey/aria-hidden.git"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/es2015/index.js"
+      ],
+      "notices": [
+        {
+          "source": "npm:aria-hidden@1.2.6/LICENSE",
+          "sha256": "30f0cfddf483d1128e3610205020f2041a6c5e837aa999e0aa82e5576187d4a9"
+        }
+      ]
+    },
+    {
+      "name": "class-variance-authority",
+      "version": "0.7.1",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/joe-bell/cva.git",
+      "scopes": [
+        "client",
+        "declared-direct",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:class-variance-authority@0.7.1/LICENSE",
+          "sha256": "0ccbf956cffc8dcf515809433cb5242ee67c94513d46e48c261d68d0880de406"
+        }
+      ]
+    },
+    {
+      "name": "clsx",
+      "version": "2.1.1",
+      "license": "MIT",
+      "repository": "lukeed/clsx",
+      "scopes": [
+        "client",
+        "declared-direct",
+        "ssr"
+      ],
+      "modules": [
+        "dist/clsx.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:clsx@2.1.1/license",
+          "sha256": "9a9edad7baae52622bddf3c15b2ef8a33d2c89f2d25408ad13e8a7481c6b0c97"
+        }
+      ]
+    },
+    {
+      "name": "get-nonce",
+      "version": "1.0.1",
+      "license": "MIT",
+      "repository": "git@github.com:theKashey/get-nonce.git",
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/es2015/index.js"
+      ],
+      "notices": [
+        {
+          "source": "npm:get-nonce@1.0.1/LICENSE",
+          "sha256": "acf3b087b348d2f2e731b9d4131af185aad694c1204ce14a46909483fd42da05"
+        }
+      ]
+    },
+    {
+      "name": "lucide-react",
+      "version": "1.31.0",
+      "license": "ISC",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/lucide-icons/lucide.git",
+        "directory": "packages/lucide-react"
+      },
+      "scopes": [
+        "client",
+        "declared-direct",
+        "ssr"
+      ],
+      "modules": [
+        "dist/esm/Icon.mjs",
+        "dist/esm/context.mjs",
+        "dist/esm/createLucideIcon.mjs",
+        "dist/esm/defaultAttributes.mjs",
+        "dist/esm/icons/arrow-left.mjs",
+        "dist/esm/icons/arrow-up-left.mjs",
+        "dist/esm/icons/check-check.mjs",
+        "dist/esm/icons/check.mjs",
+        "dist/esm/icons/chevron-down.mjs",
+        "dist/esm/icons/chevron-left.mjs",
+        "dist/esm/icons/chevron-up.mjs",
+        "dist/esm/icons/circle-check.mjs",
+        "dist/esm/icons/clock-3.mjs",
+        "dist/esm/icons/download.mjs",
+        "dist/esm/icons/external-link.mjs",
+        "dist/esm/icons/file-text.mjs",
+        "dist/esm/icons/folder-open.mjs",
+        "dist/esm/icons/git-branch.mjs",
+        "dist/esm/icons/info.mjs",
+        "dist/esm/icons/library.mjs",
+        "dist/esm/icons/link-2.mjs",
+        "dist/esm/icons/loader-circle.mjs",
+        "dist/esm/icons/octagon-x.mjs",
+        "dist/esm/icons/plus.mjs",
+        "dist/esm/icons/refresh-cw.mjs",
+        "dist/esm/icons/rotate-ccw-clock.mjs",
+        "dist/esm/icons/scan-text.mjs",
+        "dist/esm/icons/search.mjs",
+        "dist/esm/icons/shield-check.mjs",
+        "dist/esm/icons/triangle-alert.mjs",
+        "dist/esm/icons/upload.mjs",
+        "dist/esm/icons/users.mjs",
+        "dist/esm/icons/x.mjs",
+        "dist/esm/shared/src/utils/hasA11yProp.mjs",
+        "dist/esm/shared/src/utils/mergeClasses.mjs",
+        "dist/esm/shared/src/utils/toCamelCase.mjs",
+        "dist/esm/shared/src/utils/toKebabCase.mjs",
+        "dist/esm/shared/src/utils/toPascalCase.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:lucide-react@1.31.0/LICENSE",
+          "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57"
+        },
+        {
+          "source": "npm:lucide-react@1.31.0/dist/esm/icons/copyright.mjs",
+          "sha256": "da57e12b1eda4cc3f00e4e585740434d4b34b171931ce5381f27d391fd129ff7"
+        },
+        {
+          "source": "npm:lucide-react@1.31.0/dist/esm/icons/copyright.mjs.map",
+          "sha256": "276fbb649bda6b64528dedc0db040efc6ec73a3a1881a737f850ffdcef114501"
+        }
+      ]
+    },
+    {
+      "name": "next-themes",
+      "version": "0.4.6",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/pacocoursey/next-themes.git"
+      },
+      "scopes": [
+        "client",
+        "declared-direct",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:next-themes@0.4.6/license.md",
+          "sha256": "b5acfd21b3b61508365224c40ec1b03ec71091248baaf989d4be916551e7d532"
+        }
+      ]
+    },
+    {
+      "name": "react-dom",
+      "version": "19.2.6",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/facebook/react.git",
+        "directory": "packages/react-dom"
+      },
+      "scopes": [
+        "client",
+        "declared-direct",
+        "rsc",
+        "ssr"
+      ],
+      "modules": [
+        "cjs/react-dom-client.production.js",
+        "cjs/react-dom-server-legacy.browser.production.js",
+        "cjs/react-dom-server.edge.production.js",
+        "cjs/react-dom.production.js",
+        "cjs/react-dom.react-server.production.js",
+        "client.js",
+        "index.js",
+        "react-dom.react-server.js",
+        "server.edge.js",
+        "static.edge.js"
+      ],
+      "notices": [
+        {
+          "source": "npm:react-dom@19.2.6/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "react-remove-scroll-bar",
+      "version": "2.3.8",
+      "license": "MIT",
+      "repository": "https://github.com/theKashey/react-remove-scroll-bar",
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/es2015/component.js",
+        "dist/es2015/constants.js",
+        "dist/es2015/utils.js"
+      ],
+      "notices": [
+        {
+          "source": "licenses/react-remove-scroll-bar.txt",
+          "sha256": "a79aae0c0f21990d9d963bb3c5a79cdcea9a46f8523ba55c58d7fe776b6ebc84"
+        }
+      ]
+    },
+    {
+      "name": "react-remove-scroll",
+      "version": "2.7.2",
+      "license": "MIT",
+      "repository": "https://github.com/theKashey/react-remove-scroll",
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/es2015/Combination.js",
+        "dist/es2015/SideEffect.js",
+        "dist/es2015/UI.js",
+        "dist/es2015/aggresiveCapture.js",
+        "dist/es2015/handleScroll.js",
+        "dist/es2015/medium.js",
+        "dist/es2015/sidecar.js"
+      ],
+      "notices": [
+        {
+          "source": "npm:react-remove-scroll@2.7.2/LICENSE",
+          "sha256": "30f0cfddf483d1128e3610205020f2041a6c5e837aa999e0aa82e5576187d4a9"
+        }
+      ]
+    },
+    {
+      "name": "react-server-dom-webpack",
+      "version": "19.2.6",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/facebook/react.git",
+        "directory": "packages/react-server-dom-webpack"
+      },
+      "scopes": [
+        "client",
+        "declared-direct",
+        "rsc",
+        "ssr"
+      ],
+      "modules": [
+        "cjs/react-server-dom-webpack-client.browser.production.js",
+        "cjs/react-server-dom-webpack-client.edge.production.js",
+        "cjs/react-server-dom-webpack-server.edge.production.js",
+        "client.browser.js",
+        "client.edge.js",
+        "server.edge.js",
+        "static.edge.js"
+      ],
+      "notices": [
+        {
+          "source": "npm:react-server-dom-webpack@19.2.6/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "react-style-singleton",
+      "version": "2.2.3",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/theKashey/react-style-singleton"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/es2015/component.js",
+        "dist/es2015/hook.js",
+        "dist/es2015/singleton.js"
+      ],
+      "notices": [
+        {
+          "source": "npm:react-style-singleton@2.2.3/LICENSE",
+          "sha256": "30f0cfddf483d1128e3610205020f2041a6c5e837aa999e0aa82e5576187d4a9"
+        }
+      ]
+    },
+    {
+      "name": "react",
+      "version": "19.2.6",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/facebook/react.git",
+        "directory": "packages/react"
+      },
+      "scopes": [
+        "client",
+        "declared-direct",
+        "rsc",
+        "ssr"
+      ],
+      "modules": [
+        "cjs/react-jsx-runtime.production.js",
+        "cjs/react-jsx-runtime.react-server.production.js",
+        "cjs/react.production.js",
+        "cjs/react.react-server.production.js",
+        "index.js",
+        "jsx-runtime.js",
+        "jsx-runtime.react-server.js",
+        "react.react-server.js"
+      ],
+      "notices": [
+        {
+          "source": "npm:react@19.2.6/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "rolldown",
+      "version": "1.0.1",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rolldown/rolldown.git",
+        "directory": "packages/rolldown"
+      },
+      "scopes": [
+        "generated-css-or-helper"
+      ],
+      "modules": [],
+      "notices": [
+        {
+          "source": "npm:rolldown@1.0.1/LICENSE",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734"
+        }
+      ]
+    },
+    {
+      "name": "scheduler",
+      "version": "0.27.0",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/facebook/react.git",
+        "directory": "packages/scheduler"
+      },
+      "scopes": [
+        "client"
+      ],
+      "modules": [
+        "cjs/scheduler.production.js",
+        "index.js"
+      ],
+      "notices": [
+        {
+          "source": "npm:scheduler@0.27.0/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "version": "2.0.8",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/emilkowalski/sonner.git"
+      },
+      "scopes": [
+        "client",
+        "declared-direct",
+        "ssr"
+      ],
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:sonner@2.0.8/LICENSE.md",
+          "sha256": "da9201378c36ffd81f51ad0b305f3f0981e90bc558789210ad65d1161eec3b7d"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-merge",
+      "version": "3.6.0",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dcastil/tailwind-merge.git"
+      },
+      "scopes": [
+        "client",
+        "declared-direct",
+        "ssr"
+      ],
+      "modules": [
+        "dist/bundle-mjs.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:tailwind-merge@3.6.0/LICENSE.md",
+          "sha256": "d4c70c7ce38cea8778f0aed3fc0bef0a9dbd27f13bd8b6773cbd6d37941971e5"
+        }
+      ]
+    },
+    {
+      "name": "tailwindcss",
+      "version": "4.2.1",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/tailwindlabs/tailwindcss.git",
+        "directory": "packages/tailwindcss"
+      },
+      "scopes": [
+        "declared-direct",
+        "generated-css-or-helper"
+      ],
+      "modules": [],
+      "notices": [
+        {
+          "source": "npm:tailwindcss@4.2.1/LICENSE",
+          "sha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985"
+        }
+      ]
+    },
+    {
+      "name": "tslib",
+      "version": "2.8.1",
+      "license": "0BSD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/Microsoft/tslib.git"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "tslib.es6.mjs"
+      ],
+      "notices": [
+        {
+          "source": "npm:tslib@2.8.1/LICENSE.txt",
+          "sha256": "210b19e543130388c68654b7497e967119ce17145f66ab7d85688fbd70f08751"
+        }
+      ]
+    },
+    {
+      "name": "tw-animate-css",
+      "version": "1.4.0",
+      "license": "MIT",
+      "repository": "Wombosvideo/tw-animate-css",
+      "scopes": [
+        "declared-direct",
+        "generated-css-or-helper"
+      ],
+      "modules": [],
+      "notices": [
+        {
+          "source": "npm:tw-animate-css@1.4.0/LICENSE",
+          "sha256": "039184dfa0a822397b3f45a435b5b1e538721587fbade96b9fa80f86cb354109"
+        }
+      ]
+    },
+    {
+      "name": "use-callback-ref",
+      "version": "1.3.3",
+      "license": "MIT",
+      "repository": "https://github.com/theKashey/use-callback-ref/",
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/es2015/assignRef.js",
+        "dist/es2015/useMergeRef.js",
+        "dist/es2015/useRef.js"
+      ],
+      "notices": [
+        {
+          "source": "npm:use-callback-ref@1.3.3/LICENSE",
+          "sha256": "30f0cfddf483d1128e3610205020f2041a6c5e837aa999e0aa82e5576187d4a9"
+        }
+      ]
+    },
+    {
+      "name": "use-sidecar",
+      "version": "1.1.3",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/theKashey/use-sidecar"
+      },
+      "scopes": [
+        "client",
+        "ssr"
+      ],
+      "modules": [
+        "dist/es2015/exports.js",
+        "dist/es2015/medium.js"
+      ],
+      "notices": [
+        {
+          "source": "npm:use-sidecar@1.1.3/LICENSE",
+          "sha256": "30f0cfddf483d1128e3610205020f2041a6c5e837aa999e0aa82e5576187d4a9"
+        }
+      ]
+    },
+    {
+      "name": "vinext",
+      "version": "1.0.0-beta.5",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cloudflare/vinext.git"
+      },
+      "scopes": [
+        "client",
+        "declared-direct",
+        "rsc",
+        "ssr"
+      ],
+      "modules": [
+        "dist/build/google-fonts/build-url.js",
+        "dist/build/google-fonts/sort-variants.js",
+        "dist/client/app-nav-failure-handler.js",
+        "dist/client/empty-module.js",
+        "dist/client/instrumentation-client-state.js",
+        "dist/client/instrumentation-client.js",
+        "dist/client/navigation-runtime.js",
+        "dist/client/react-instance-bootstrap.js",
+        "dist/client/react-instance.js",
+        "dist/client/window-next.js",
+        "dist/config/request-context.js",
+        "dist/deps/.pnpm/pathslash@0.1.0/deps/pathslash/dist/index.js",
+        "dist/routing/route-matching.js",
+        "dist/routing/route-pattern.js",
+        "dist/routing/route-trie.js",
+        "dist/routing/utils.js",
+        "dist/server/app-action-request.js",
+        "dist/server/app-bfcache-id.js",
+        "dist/server/app-bfcache-identity.js",
+        "dist/server/app-browser-action-result.js",
+        "dist/server/app-browser-client-reuse-manifest.js",
+        "dist/server/app-browser-entry.js",
+        "dist/server/app-browser-error.js",
+        "dist/server/app-browser-history-controller.js",
+        "dist/server/app-browser-hydration.js",
+        "dist/server/app-browser-interception-context.js",
+        "dist/server/app-browser-mpa-navigation.js",
+        "dist/server/app-browser-navigation-controller.js",
+        "dist/server/app-browser-popstate.js",
+        "dist/server/app-browser-prefetch-response.js",
+        "dist/server/app-browser-rsc-redirect.js",
+        "dist/server/app-browser-state.js",
+        "dist/server/app-browser-stream.js",
+        "dist/server/app-browser-visible-commit.js",
+        "dist/server/app-client-reference-preloader.js",
+        "dist/server/app-elements-wire.js",
+        "dist/server/app-elements.js",
+        "dist/server/app-fallback-renderer.js",
+        "dist/server/app-history-state.js",
+        "dist/server/app-hook-warning-suppression.js",
+        "dist/server/app-hydration-cache-publication.js",
+        "dist/server/app-inline-css-client.js",
+        "dist/server/app-interception-context-header.js",
+        "dist/server/app-layout-param-observation.js",
+        "dist/server/app-mounted-slots-header.js",
+        "dist/server/app-optimistic-routing.js",
+        "dist/server/app-page-boundary-render.js",
+        "dist/server/app-page-boundary.js",
+        "dist/server/app-page-cache-finalizer.js",
+        "dist/server/app-page-cache-render.js",
+        "dist/server/app-page-cache.js",
+        "dist/server/app-page-dispatch.js",
+        "dist/server/app-page-element-builder.js",
+        "dist/server/app-page-execution.js",
+        "dist/server/app-page-head.js",
+        "dist/server/app-page-http-access-fallback-metadata.js",
+        "dist/server/app-page-method.js",
+        "dist/server/app-page-params.js",
+        "dist/server/app-page-probe.js",
+        "dist/server/app-page-render-identity.js",
+        "dist/server/app-page-render-observation.js",
+        "dist/server/app-page-render.js",
+        "dist/server/app-page-request.js",
+        "dist/server/app-page-response.js",
+        "dist/server/app-page-route-wiring.js",
+        "dist/server/app-page-search-params-observation.js",
+        "dist/server/app-page-segment-plan.js",
+        "dist/server/app-page-segment-state.js",
+        "dist/server/app-page-stream.js",
+        "dist/server/app-post-middleware-context.js",
+        "dist/server/app-prerender-endpoints.js",
+        "dist/server/app-prerender-static-params.js",
+        "dist/server/app-render-dependency.js",
+        "dist/server/app-request-context.js",
+        "dist/server/app-route-handler-cache.js",
+        "dist/server/app-route-handler-dispatch.js",
+        "dist/server/app-route-handler-execution.js",
+        "dist/server/app-route-handler-policy.js",
+        "dist/server/app-route-handler-response.js",
+        "dist/server/app-route-handler-runtime.js",
+        "dist/server/app-route-module-loader.js",
+        "dist/server/app-route-tree-prefetch.js",
+        "dist/server/app-router-entry.js",
+        "dist/server/app-rsc-cache-busting.js",
+        "dist/server/app-rsc-embedded-chunks.js",
+        "dist/server/app-rsc-error-handler.js",
+        "dist/server/app-rsc-errors.js",
+        "dist/server/app-rsc-handler.js",
+        "dist/server/app-rsc-redirect-flight.js",
+        "dist/server/app-rsc-render-mode.js",
+        "dist/server/app-rsc-request-normalization.js",
+        "dist/server/app-rsc-response-finalizer.js",
+        "dist/server/app-rsc-route-matching.js",
+        "dist/server/app-segment-config.js",
+        "dist/server/app-ssr-entry.js",
+        "dist/server/app-ssr-error-meta.js",
+        "dist/server/app-ssr-router-instance.js",
+        "dist/server/app-ssr-stream.js",
+        "dist/server/app-static-generation.js",
+        "dist/server/app-visited-response-cache.js",
+        "dist/server/artifact-compatibility.js",
+        "dist/server/before-interactive-head.js",
+        "dist/server/bfcache-identity.js",
+        "dist/server/cache-control.js",
+        "dist/server/cache-headers.js",
+        "dist/server/cache-proof.js",
+        "dist/server/client-reuse-manifest.js",
+        "dist/server/client-trace-metadata.js",
+        "dist/server/cookie-utils.js",
+        "dist/server/csp.js",
+        "dist/server/default-global-error-module.js",
+        "dist/server/default-global-not-found-module.js",
+        "dist/server/default-not-found-module.js",
+        "dist/server/defer-until-stream-consumed.js",
+        "dist/server/dev-initial-server-error.js",
+        "dist/server/edge-api-runtime.js",
+        "dist/server/fetch-handler.js",
+        "dist/server/headers.js",
+        "dist/server/html.js",
+        "dist/server/http-error-responses.js",
+        "dist/server/image-optimization.js",
+        "dist/server/implicit-tags.js",
+        "dist/server/instrumentation.js",
+        "dist/server/isr-cache.js",
+        "dist/server/isr-decision.js",
+        "dist/server/middleware-response-headers.js",
+        "dist/server/navigation-planner.js",
+        "dist/server/navigation-trace.js",
+        "dist/server/next-error-digest.js",
+        "dist/server/normalize-path.js",
+        "dist/server/open-redirect.js",
+        "dist/server/operation-token.js",
+        "dist/server/pages-client-assets.js",
+        "dist/server/pages-data-route.js",
+        "dist/server/pages-i18n.js",
+        "dist/server/pregenerated-concrete-paths.js",
+        "dist/server/prerender-route-params.js",
+        "dist/server/prerender-work-unit-setup.js",
+        "dist/server/request-pipeline.js",
+        "dist/server/rsc-completion-metadata.js",
+        "dist/server/rsc-stream-hints.js",
+        "dist/server/server-action-not-found.js",
+        "dist/server/server-globals.js",
+        "dist/server/skip-cache-proof.js",
+        "dist/server/static-layout-client-reuse-proof.js",
+        "dist/server/streaming-metadata.js",
+        "dist/server/worker-revalidation-context.js",
+        "dist/server/worker-utils.js",
+        "dist/shims/app-router-scroll-state.js",
+        "dist/shims/app-router-scroll.js",
+        "dist/shims/before-interactive-context.js",
+        "dist/shims/cache-handler.js",
+        "dist/shims/cache-request-state.js",
+        "dist/shims/cdn-cache.js",
+        "dist/shims/client-hook-error.js",
+        "dist/shims/default-global-error.js",
+        "dist/shims/default-not-found.js",
+        "dist/shims/error-boundary-navigation.js",
+        "dist/shims/error-boundary.js",
+        "dist/shims/fetch-cache.js",
+        "dist/shims/font-google-base.js",
+        "dist/shims/font-local.js",
+        "dist/shims/font-utils.js",
+        "dist/shims/hash-scroll.js",
+        "dist/shims/headers.js",
+        "dist/shims/internal/als-registry.js",
+        "dist/shims/internal/app-page-props-cache-key.js",
+        "dist/shims/internal/app-prefetch-fetch-queue.js",
+        "dist/shims/internal/app-route-prefetch-policy.js",
+        "dist/shims/internal/app-router-context.js",
+        "dist/shims/internal/cookie-serialize.js",
+        "dist/shims/internal/hybrid-client-route-owner-direct.js",
+        "dist/shims/internal/make-hanging-promise.js",
+        "dist/shims/internal/work-unit-async-storage.js",
+        "dist/shims/layout-segment-context.js",
+        "dist/shims/metadata.js",
+        "dist/shims/navigation-context-state.js",
+        "dist/shims/navigation-errors.js",
+        "dist/shims/navigation-state.js",
+        "dist/shims/navigation.js",
+        "dist/shims/ppr-fallback-shell.js",
+        "dist/shims/readonly-url-search-params.js",
+        "dist/shims/request-context.js",
+        "dist/shims/root-params.js",
+        "dist/shims/script-nonce-context.js",
+        "dist/shims/server.js",
+        "dist/shims/slot.js",
+        "dist/shims/streamed-icons.js",
+        "dist/shims/thenable-params.js",
+        "dist/shims/unified-request-context.js",
+        "dist/shims/url-safety.js",
+        "dist/shims/url-utils.js",
+        "dist/utils/asset-prefix.js",
+        "dist/utils/base-path.js",
+        "dist/utils/cache-control-metadata.js",
+        "dist/utils/compare.js",
+        "dist/utils/deployment-id.js",
+        "dist/utils/dev-error-recovery-event.js",
+        "dist/utils/domain-locale.js",
+        "dist/utils/encode-cache-tag.js",
+        "dist/utils/external-url.js",
+        "dist/utils/hash.js",
+        "dist/utils/html-limited-bots.js",
+        "dist/utils/middleware-request-headers.js",
+        "dist/utils/navigation-signal.js",
+        "dist/utils/number.js",
+        "dist/utils/parse-cookie.js",
+        "dist/utils/promise.js",
+        "dist/utils/protocol-headers.js",
+        "dist/utils/query.js",
+        "dist/utils/record.js",
+        "dist/utils/redirect-digest.js",
+        "dist/utils/sorted-array.js",
+        "dist/utils/text-stream.js"
+      ],
+      "notices": [
+        {
+          "source": "npm:vinext@1.0.0-beta.5/LICENSE",
+          "sha256": "19a7b85046eb77c8ab308c68569abbbb59235814297b9c95dc90480f71ec7198"
+        }
+      ]
+    },
+    {
+      "name": "vite",
+      "version": "8.0.13",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vitejs/vite.git",
+        "directory": "packages/vite"
+      },
+      "scopes": [
+        "declared-direct",
+        "generated-css-or-helper"
+      ],
+      "modules": [],
+      "notices": [
+        {
+          "source": "npm:vite@8.0.13/LICENSE.md",
+          "sha256": "40501d82eb20f60d031aaaa3291a103d72551ebd49e11e73ba94ea34589e7bdd"
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "name": "IBM Plex Sans Arabic",
+      "file": "public/fonts/OFL.txt",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+    },
+    {
+      "name": "shadcn UI and vendor CSS",
+      "file": "vendor/shadcn-tailwind-4.13.0.LICENSE.md",
+      "sha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f"
+    },
+    {
+      "name": "Sites build integration",
+      "file": "build/sites-vite-plugin.LICENSE",
+      "sha256": "7de1e115d165f176e68f962acdb809b5ab8d8ae78d3981e0701392b2ac50c713"
+    },
+    {
+      "name": "Next.js starter SVG files",
+      "file": "licenses/next.txt",
+      "sha256": "ee765244e2d59f5234d474f62e0766fa0c8b99af967fdd4c0cb8dcb0c76ea224"
+    }
+  ],
+  "chunks": [
+    {
+      "environment": "client",
+      "file": "dist/client/_next/static/chunks/app-route-prefetch-policy-BwODqp94.js",
+      "sha256": "9b2173e4e428dc4f64093dae7175734e76ce2f499489b449c95a5cc78876bf08",
+      "bytes": 937
+    },
+    {
+      "environment": "client",
+      "file": "dist/client/_next/static/chunks/framework-D_rUT4EX.js",
+      "sha256": "939d0fabebb3b2f01753bb866b067d8d3384fb06da19f0e6557609d3b1a9f4f7",
+      "bytes": 190152
+    },
+    {
+      "environment": "client",
+      "file": "dist/client/_next/static/chunks/index-ChE5DqkI.js",
+      "sha256": "29d18964340dcc3016bd8359c9856ac8b6a1b3645e355c32f25190123b08d1fe",
+      "bytes": 195473
+    },
+    {
+      "environment": "client",
+      "file": "dist/client/_next/static/chunks/layout-segment-context-BY2kIW9S.js",
+      "sha256": "637bbdb6d3e4ca61ffbe9f0f6c692365c4cf4176c3a850bd423d218efebb6036",
+      "bytes": 494
+    },
+    {
+      "environment": "client",
+      "file": "dist/client/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+      "sha256": "5db5ba82eef00d1dee7e86e663098c9427d01183a88d357437daff295aec3e75",
+      "bytes": 694
+    },
+    {
+      "environment": "client",
+      "file": "dist/client/_next/static/chunks/streamed-icons-Bumrcy-j.js",
+      "sha256": "7eb2a6b44b9c0faa7300c8dd36b0fae7a35d9f65e139dd9046b3df193aa83bc8",
+      "bytes": 772
+    },
+    {
+      "environment": "client",
+      "file": "dist/client/_next/static/chunks/workspace-CLUYh_og.js",
+      "sha256": "398c874ad62dcae3f43861a37d5d20fcb948ff8a9d0cf360139748b97fdd422a",
+      "bytes": 216610
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/app-page-cache-C2K2Buy3.js",
+      "sha256": "b6ef8709c005c3f8a4c9ef95a38029293c5a75cdfaf88f042b3a58ee87462a4b",
+      "bytes": 5194
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/app-page-cache-finalizer-Ba-shTBP.js",
+      "sha256": "c1a32708c458af95267005675505e8a930aac491d51283863c356c103a03b805",
+      "bytes": 3480
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/app-page-cache-render-BFlQpaYq.js",
+      "sha256": "db60a7a8f0a5b793d7096c2bcd334cf9ab7d839ed334ef7e9a9615eff5ec7504",
+      "bytes": 1949
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/app-page-stream-OyMhhISu.js",
+      "sha256": "ed6236eca8292b914a321438bd76c12a0d18f32878b07547b98f0a1976adebdb",
+      "bytes": 9968
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/app-prerender-endpoints-D7lDUIIc.js",
+      "sha256": "759c1441a75cefe6860b9d503c1d2170dd51673a39cb77256a503a3c9dfb3e99",
+      "bytes": 2012
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/app-prerender-static-params-DvXNdgtR.js",
+      "sha256": "6e964aa8668f6471bbd61cbe0c35f634520f654c499cac14950709481f96c1d2",
+      "bytes": 170
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/app-route-handler-dispatch-CvlqPHEF.js",
+      "sha256": "f71870fdc1918ae5866a7310f2ec09350e514349a013f9656e5e425193c92e3a",
+      "bytes": 26185
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/app-segment-config-BmI7CknL.js",
+      "sha256": "9cee6012187006194a2fa222daba1ed62583e96b258628b72617dd3d52c88d96",
+      "bytes": 13636
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/app-static-generation-DkxOPByJ.js",
+      "sha256": "71451721ae4a42108e9ed32567cd9d9861beb4952215b0fd57ffc373cd3edc01",
+      "bytes": 916
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/cache-headers-gQkkJDPs.js",
+      "sha256": "e80b1ab36725b800abf9f1b077691e19d5770965082cc18d7ee095d29932f5d1",
+      "bytes": 39306
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/chatgpt-auth-YDttpqCo.js",
+      "sha256": "86a274ee3c5f6a5f7061d57cf5c22d8b46bd766a676535bcc81c77d8907e066a",
+      "bytes": 924
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/example-D9YQ5X0f.js",
+      "sha256": "b91837652686f9198d2e7f32d39703d8fbee6ea6f87dcb862e13deace932ed57",
+      "bytes": 3260
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/framework~index-BQs7X4ZP.js",
+      "sha256": "cb8c6b24ab680e4f09e9607a7e80b414784caeed2e9fd30609043bb3b9a3a868",
+      "bytes": 200
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/framework~index~page~layout~page~page~page~app-page-cache-render~app-page-cache~app-route-h~fjnrume7-Cm4ByvYP.js",
+      "sha256": "64441c40445edaba8215ce06c6e520652b77604cb3acde5296bf0abe43cfbf37",
+      "bytes": 824
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/framework~index~page~layout~page~page~page~app-page-cache-render~app-page-cache~app-route-h~m4wfidan-BPJTVJ-j.js",
+      "sha256": "4f686187dcd97b5d9eef7f152f93eaf0b53172f59e748a8ecf410a20b326e9f8",
+      "bytes": 5499
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/framework~index~page~page~page~app-route-handler-dispatch-CzG45iSn.js",
+      "sha256": "48d61f738dc7a3f86b4380efe90e6d479cab04a68ba13e39999d25f611576b29",
+      "bytes": 56617
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/guest-DONu4JFL.js",
+      "sha256": "d1acdd18a6d97789cbc8ee5640f1896e4f4c4c3d92e8703366ca3c574b65e273",
+      "bytes": 3877
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/headers-BBgHuOI_.js",
+      "sha256": "dea2c425b42d7d36acb126e0f8925d1d3685c307257cb8c0924ae88718883baf",
+      "bytes": 4969
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/headers-j0QAsRga.js",
+      "sha256": "d6db60f6759b11234d865969c3b08332223067a40da1fa0d77f6b567d12f81f0",
+      "bytes": 10975
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/implicit-tags-a5VQo59n.js",
+      "sha256": "9823b60b13d52dfc9e0c394031f677d9f253e0416179c507b1323497fce4c19c",
+      "bytes": 1345
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/isr-cache-O5B1gefo.js",
+      "sha256": "76ac2a09c12a2f4aa5039b5710fc798fb4473b450e15ae9c26595f2663700a17",
+      "bytes": 4925
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/navigation-errors-C7957Q8H.js",
+      "sha256": "29b57b9610be53b173844544215c4c7c00884121aba18232f3f5e41cfce5f3a3",
+      "bytes": 1253
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/navigation-runtime-D69zj4xM.js",
+      "sha256": "5493ebf3299b71136a0c202c968ebb61b1dd6006483eb03177aa783c5d75a75d",
+      "bytes": 803
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/navigation.react-server-QTb0xTpP.js",
+      "sha256": "50f22ad5ddd467382f0f183f2908557fc987a5db3e83a6ea2f3f2fba953e7127",
+      "bytes": 262
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/page-B7FGf-Go.js",
+      "sha256": "06401bc5e9be4ff577000f50c902d81a48240fde8b2b8348fc861ab6354c9aec",
+      "bytes": 372
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/page-BFW9xAJS.js",
+      "sha256": "0e3e4f63bbd846b6077d1c9a2fb14c28bc853ffc5a43b2e909dc5f7e96330945",
+      "bytes": 5158
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/page-CSxuC2uT.js",
+      "sha256": "138f4c5085b4951a05c295ef08cceef2933e196e114902112005f220f2d43962",
+      "bytes": 374
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/page-DnuQ-9Zv.js",
+      "sha256": "55375d79b236f835d74f31e142197bde999f62ce75263f2edf7e1bf8f3faf627",
+      "bytes": 1356
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/record-Cz3MrZeO.js",
+      "sha256": "b9bdb7b7d0e4844d241dba61104d18111d61ef92af3f137d15749531d276f9cf",
+      "bytes": 79
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/redirect-digest-C-06pD9r.js",
+      "sha256": "b92ec9aa7c6dcd33cfbe31e79016b8e95e069db3104601e782c0eab8aa9d331b",
+      "bytes": 377
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/rolldown-runtime-DUnMT5BP.js",
+      "sha256": "5db5ba82eef00d1dee7e86e663098c9427d01183a88d357437daff295aec3e75",
+      "bytes": 694
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/root-params-CarSBhWB.js",
+      "sha256": "b1dbb34ba341adf166a683d8a2382ddd30e511bbdc7099280f75771becf39a7e",
+      "bytes": 1244
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/route-B5y3L_mB.js",
+      "sha256": "c46a26c463b7fcb4c69d0b1726ee58bb5390fda9df5d060e00766cf5e79ee730",
+      "bytes": 42158
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/route-Cp5VxOdn.js",
+      "sha256": "809b2d40c58f5a2644e3202b2f7e3ca6102f1ff10cbe15a52ca939c666aaefbf",
+      "bytes": 105
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/route-DgTSty8e.js",
+      "sha256": "2db78c743c69172c3f3cbe3868ae989ab4a8fd49762324a4505261c1a4683375",
+      "bytes": 91
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/route-Yx-qujux.js",
+      "sha256": "0aec88fed4dbf2a65beaecbfc294be9ce14b85bdafc9311a53ed164135f6f15f",
+      "bytes": 102
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/rsc-DsfBzKQV.js",
+      "sha256": "3b4cf1bd72c073f221c8249d50aeb326284064b6b544613224cb7a886c064625",
+      "bytes": 735
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/server-DfHTjM9U.js",
+      "sha256": "b0d1e180cb76bcc8df17beebef9dc13e6c6d29bfc513f6e98094e7771aa3f7b3",
+      "bytes": 7189
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/text-stream-CEiKOUwM.js",
+      "sha256": "d184be9ab17fcb9b0610f7942c0468add86bd1a513b76e3cc64c34f0eb6b4596",
+      "bytes": 19441
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/_next/static/workspace-BT59WdJm.js",
+      "sha256": "a3a483c2dacb1165f3b78ef274753fc4171dd281124c836b0a7b0d2334eee8cb",
+      "bytes": 170
+    },
+    {
+      "environment": "rsc",
+      "file": "dist/server/index.js",
+      "sha256": "c1634673680ecbfa7ec992e989bf29b6fd4af7fe735f6f0e529b8db9b4bd4502",
+      "bytes": 205771
+    },
+    {
+      "environment": "ssr",
+      "file": "dist/server/ssr/_next/static/app-prefetch-fetch-queue-DxuBK-0j.js",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "environment": "ssr",
+      "file": "dist/server/ssr/_next/static/app-router-scroll-CVA6D-8y.js",
+      "sha256": "8aa68c48f347896ce1bc31ef186746a7cd9ae043f3e4e39a3856f13d1061bb3c",
+      "bytes": 2548
+    },
+    {
+      "environment": "ssr",
+      "file": "dist/server/ssr/_next/static/error-boundary-CpKCYeaG.js",
+      "sha256": "013dad3c0ea62859d75ef290703dc2547d9df0b1222d9235cc9c6011c5b1d806",
+      "bytes": 5399
+    },
+    {
+      "environment": "ssr",
+      "file": "dist/server/ssr/_next/static/layout-segment-context-uYKxdJGQ.js",
+      "sha256": "1621400fe5e17f387c4d38c41080771328053992ebc7c01f43b5ea78225580d6",
+      "bytes": 381
+    },
+    {
+      "environment": "ssr",
+      "file": "dist/server/ssr/_next/static/static.edge-CKJjMt3N.js",
+      "sha256": "9aa4706e79212b5ce4072eb3d7600afd525dc33bf2f7a66f64a94ffbc9fd7149",
+      "bytes": 168
+    },
+    {
+      "environment": "ssr",
+      "file": "dist/server/ssr/_next/static/streamed-icons-CYdOGffu.js",
+      "sha256": "bc2f0e070a49732231e8516fd3b78f49de63dff63b5d27db4b5b5f7ea2a4b228",
+      "bytes": 691
+    },
+    {
+      "environment": "ssr",
+      "file": "dist/server/ssr/_next/static/workspace-CWD5ebNQ.js",
+      "sha256": "68e95a823a38b29ab26c0587380f69e1cb104b5b1228e69bd76b2fb888d87b62",
+      "bytes": 215190
+    },
+    {
+      "environment": "ssr",
+      "file": "dist/server/ssr/index.js",
+      "sha256": "4ae8590774f57a75d3d51ac06a2c5d502686bff5bef83af83120a5c7c6fdb750",
+      "bytes": 278311
+    }
+  ],
+  "notices_sha256": "8f2af3af3f60b3e164d8f1b92620ce726042ddfb7bcdcb6bbf14c0ae6c3aebe2"
+}

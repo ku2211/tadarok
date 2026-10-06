@@ -1,0 +1,40 @@
+{
+  "source_repository": "https://github.com/theKashey/react-remove-scroll-bar",
+  "source_commit": "8ca9ba5ea52de03308fe8ced94f7b159a44d28ff",
+  "source_package_version": "2.3.7",
+  "distributed_package_version": "2.3.8",
+  "typescript": "5.9.3",
+  "compiler_options": {
+    "target": "ES5",
+    "module": "ES2015",
+    "jsx": "React",
+    "importHelpers": true
+  },
+  "comparison": "Recursive TypeScript AST node kinds, identifier names and string/number literal values; comments and source locations excluded. This preserves whitespace inside strings.",
+  "records": [
+    {
+      "source": "component.tsx",
+      "compiled": "component.js",
+      "syntax_tree_matches": true,
+      "compiled_sha256": "3baec61523006aedf14321423427b0c50aa17bfe48faf344bebff9d883149f29"
+    },
+    {
+      "source": "constants.ts",
+      "compiled": "constants.js",
+      "syntax_tree_matches": true,
+      "compiled_sha256": "1c73582ef730bbca1d536a6995c7eea438dcd0632fee2856337627e44b5872e2"
+    },
+    {
+      "source": "index.ts",
+      "compiled": "index.js",
+      "syntax_tree_matches": true,
+      "compiled_sha256": "130bc4c810a84aeae180ba8fe1e7fd96f706d5d3a0cf6728419ff2c74708185f"
+    },
+    {
+      "source": "utils.ts",
+      "compiled": "utils.js",
+      "syntax_tree_matches": true,
+      "compiled_sha256": "2c4105ab772a5cbf4b3d1e54f49e94d03fde867d20767b46bb3e5c27f4d82f00"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "scope": "42 direct dependencies, matched to package.json and pnpm-lock.yaml on 2026-10-06. Full lockfile inventory is docs/DEPENDENCY-LICENSE-INVENTORY-2026-10-06.json. See docs/SOURCE-LICENSE-REVIEW-2026-10-06.md for scope and unresolved license evidence. An SPDX declaration is not a complete bundle clearance.",
+  "scope": "41 current direct dependencies, matched to package.json and pnpm-lock.yaml on 2026-10-06. drizzle-kit was removed; historical use is disclosed in docs/SOURCE-LICENSE-REVIEW-2026-10-06.md. See docs/DEPLOYED-LICENSE-INVENTORY-2026-10-06.json for current build inclusion and preserved notice hashes. No unified license is granted to original project code.",
   "dependencies": [
     {
       "name": "@base-ui/react",
@@ -292,16 +292,6 @@
         "url": "git+https://github.com/vitejs/vite-plugin-react.git",
         "directory": "packages/plugin-rsc"
       }
-    },
-    {
-      "name": "drizzle-kit",
-      "version": "0.31.10",
-      "license": "MIT",
-      "repository": {
-        "type": "git",
-        "url": "git+https://github.com/drizzle-team/drizzle-orm.git"
-      },
-      "review_note": "Package and version-tag package.json declare MIT. No MIT license file was found in the npm archive or version-tag tree; the repository root contains Apache-2.0. Preserve the declaration without resolving the conflict by assumption. Build/schema-generation tool; no import from application runtime source found."
     },
     {
       "name": "eslint",
